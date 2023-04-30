@@ -1,4 +1,7 @@
 import { Color } from "./colors";
-import { typography } from "ui/typography";
+import { tokens } from "./tokens";
+import { typography } from "./typography";
+import { reset } from "./reset";
+import { GlobalStyles } from "./globalStyles";
 
-export { Color, typography };
+export { Color, tokens, typography, reset, GlobalStyles };

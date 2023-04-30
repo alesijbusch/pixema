@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { ROUTE } from "../../routes/routes";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ROUTE } from 'routes';
 
 export const FavoritesPage = () => {
   return (
