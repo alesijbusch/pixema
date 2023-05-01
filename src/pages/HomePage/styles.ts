@@ -1,8 +1,4 @@
-import styled from 'styled-components';
-import { typography } from 'ui';
+import styled from "styled-components";
 
-const H1 = styled.h1`
-  ${typography.H1}
-`;
-
-export { H1 };
+const Home = styled.div``;
+export { Home };

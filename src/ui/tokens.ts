@@ -14,12 +14,18 @@ interface TokenColorText {
   primaryLight: string;
   secondary: string;
   error: string;
+  white: string;
+  graphite: string;
+  light: string;
 }
 interface TokenColorBackground {
   primary: string;
   primaryLight: string;
   secondary: string;
   error: string;
+  white: string;
+  graphite: string;
+  green: string;
 }
 
 interface TokenLayout {
@@ -32,6 +38,7 @@ interface TokenLayoutMedia {
   largeTablet: string;
   tablet: string;
   smallTablet: string;
+  largeMobile: string;
   mobile: string;
 }
 
@@ -42,14 +49,14 @@ interface TokenSize {
   spaces: TokenSizeSpaces;
 }
 interface TokenSizeFont {
-  sm1: string;
-  sm2: string;
-  sm3: string;
-  lg1: string;
-  lg2: string;
-  lg3: string;
-  lg4: string;
-  lg5: string;
+  fs14: string;
+  fs16: string;
+  fs18: string;
+  fs20: string;
+  fs24: string;
+  fs28: string;
+  fs32: string;
+  fs40: string;
 }
 interface TokenFontWeight {
   medium: string;
@@ -57,10 +64,13 @@ interface TokenFontWeight {
   bold: string;
 }
 interface TokenLineHeight {
-  sm1: string;
-  medium: string;
-  large: string;
-  extraLarge: string;
+  lh24: string;
+  lh28: string;
+  lh32: string;
+  lh36: string;
+  lh42: string;
+  lh48: string;
+  lh60: string;
 }
 interface TokenSizeSpaces {
   mb64: string;
@@ -80,35 +90,42 @@ const tokens: Token = {
       primaryLight: `color: ${Color.primaryLight}`,
       secondary: `color: ${Color.secondary}`,
       error: `color: ${Color.error}`,
+      white: `color: ${Color.white}`,
+      graphite: `color: ${Color.graphite}`,
+      light: `color: ${Color.light}`,
     },
     background: {
-      primary: `color: ${Color.primary}`,
-      primaryLight: `color: ${Color.primaryLight}`,
-      secondary: `color: ${Color.secondary}`,
-      error: `color: ${Color.error}`,
+      primary: `background: ${Color.primary}`,
+      primaryLight: `background: ${Color.primaryLight}`,
+      secondary: `background: ${Color.secondary}`,
+      error: `background: ${Color.error}`,
+      white: `background: ${Color.white}`,
+      graphite: `background-color: ${Color.graphite}`,
+      green: `background-color: ${Color.green}`,
     },
   },
   layout: {
     media: {
-      largeDesktop: "@media (max-width: 1920px)",
-      desktop: "@media (max-width: 1440px)",
-      smallDesktop: "@media (max-width: 1280px)",
-      largeTablet: "@media (max-width: 1024px)",
-      tablet: "@media (max-width: 768px)",
-      smallTablet: "@media (max-width: 568px)",
-      mobile: "@media (max-width: 375px)",
+      largeDesktop: "@media (min-width: 1920px)",
+      desktop: "@media (min-width: 1440px)",
+      smallDesktop: "@media (min-width: 1280px)",
+      largeTablet: "@media (min-width: 1024px)",
+      tablet: "@media (min-width: 768px)",
+      smallTablet: "@media (min-width: 568px)",
+      largeMobile: "@media (min-width: 375px)",
+      mobile: "@media (min-width: 320px)",
     },
   },
   size: {
     font: {
-      sm1: "font-size: 14px",
-      sm2: "font-size: 16px",
-      sm3: "font-size: 18px",
-      lg1: "font-size: 20px",
-      lg2: "font-size: 24px",
-      lg3: "font-size: 28px",
-      lg4: "font-size: 32px",
-      lg5: "font-size: 40px",
+      fs14: "font-size: 14px",
+      fs16: "font-size: 16px",
+      fs18: "font-size: 18px",
+      fs20: "font-size: 20px",
+      fs24: "font-size: 24px",
+      fs28: "font-size: 28px",
+      fs32: "font-size: 32px",
+      fs40: "font-size: 40px",
     },
     fontWeight: {
       medium: "font-weight: 500",
@@ -116,10 +133,13 @@ const tokens: Token = {
       bold: "font-weight: 700",
     },
     lineHeight: {
-      sm1: "line-height: 24px",
-      medium: "line-height: 32px",
-      large: "line-height: 36px",
-      extraLarge: "line-height: 60px",
+      lh24: "line-height: 24px",
+      lh28: "line-height: 28px",
+      lh32: "line-height: 32px",
+      lh36: "line-height: 36px",
+      lh42: "line-height: 42px",
+      lh48: "line-height: 48px",
+      lh60: "line-height: 60px",
     },
     spaces: {
       mb64: "margin-bottom: 64px",

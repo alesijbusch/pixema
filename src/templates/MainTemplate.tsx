@@ -1,11 +1,16 @@
+import { Header, Sidebar } from "componets";
 import React from "react";
 import { Outlet } from "react-router-dom";
+import { Container, Wrapper } from "./styles";
 
 export const MainTemplate = () => {
   return (
-    <div>
-      <h1>Header</h1>
-      <Outlet />
-    </div>
+    <Wrapper>
+      <Header />
+      <Container>
+        <Sidebar />
+        <Outlet />
+      </Container>
+    </Wrapper>
   );
 };
