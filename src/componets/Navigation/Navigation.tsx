@@ -1,17 +1,36 @@
-import React from "react";
-import { NavigationLink, StyledNavigation } from "./styles";
-import { StyledLink } from "componets/CardList/styles";
-import { ROUTE } from "routes";
+import React from 'react';
+import {
+  NavigationLink,
+  StyledNavigationIcon,
+  StyledNavigation,
+} from './styles';
+import { ROUTE } from 'routes';
+import {
+  faHouse,
+  faBookmark,
+  faFireFlameCurved,
+  faGear,
+} from '@fortawesome/free-solid-svg-icons';
 
 export const Navigation = () => {
   return (
     <StyledNavigation>
       <NavigationLink to={ROUTE.HOME}>
-        <i className="fas fa-rocket"></i>Home
+        <StyledNavigationIcon icon={faHouse} />
+        Home
       </NavigationLink>
-      <NavigationLink to={ROUTE.TRENDS}>Trends</NavigationLink>
-      <NavigationLink to={ROUTE.FAVORITES}>Favorites</NavigationLink>
-      <NavigationLink to={ROUTE.ACCOUNT}>Settings</NavigationLink>
+      <NavigationLink to={ROUTE.TRENDS}>
+        <StyledNavigationIcon icon={faFireFlameCurved} flip="horizontal" />
+        Trends
+      </NavigationLink>
+      <NavigationLink to={ROUTE.FAVORITES}>
+        <StyledNavigationIcon icon={faBookmark} />
+        Favorites
+      </NavigationLink>
+      <NavigationLink to={ROUTE.ACCOUNT}>
+        <StyledNavigationIcon icon={faGear} />
+        Settings
+      </NavigationLink>
     </StyledNavigation>
   );
 };

@@ -1,5 +1,5 @@
-import { Movie } from "types";
-import { Ganre, Poster, Rating, StyledCardItem, Title } from "./styles";
+import { Movie } from 'types';
+import { Ganre, Poster, Rating, StyledCardItem, Title } from './styles';
 
 interface CardItemProps {
   film: Movie;

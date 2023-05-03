@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { typography } from "ui";
-import { tokens } from "ui";
-import { spaces } from "ui";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { typography } from 'ui';
+import { tokens } from 'ui';
+import { spaces } from 'ui';
 const { color, layout } = tokens;
 
 const StyledCardItem = styled.div`
@@ -21,9 +21,14 @@ const Ganre = styled.span`
 const Poster = styled.img`
   display: block;
   width: 100%;
-  height: 308px;
   border-radius: 15px;
   ${spaces.mb24}
+  ${layout.media.smallTablet} {
+    height: 367px;
+  }
+  ${layout.media.tablet} {
+    height: 308px;
+  }
   ${layout.media.desktop} {
     height: 394px;
   }

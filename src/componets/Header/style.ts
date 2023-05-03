@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { spaces, tokens } from "ui";
-import { Logo, FilterIcon } from "assets";
+import styled from 'styled-components';
+import { spaces, tokens, typography } from 'ui';
+import { Logo, FilterIcon } from 'assets';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const { color, layout, size } = tokens;
 
 const StyledHeader = styled.div`
@@ -93,24 +93,7 @@ const Profile = styled.div`
     align-items: center;
     width: 264px;
     order: 3;
-    position: relative;
     padding-right: 20px;
-    :before {
-      content: ">";
-      display: block;
-      position: absolute;
-      top: 50%;
-      right: 0;
-      top: 50%;
-      margin-bottom: -50%;
-      transform: translate(-50%, -50%);
-      line-height: 1;
-      color: #fff;
-      text-decoration: none;
-      /* -webkit-transform: rotate(270deg); */
-      /* -o-transform: rotate(270deg);
-    transform: rotate(270deg); */
-    }
   }
 `;
 const ProfileIcon = styled.div`
@@ -119,10 +102,18 @@ const ProfileIcon = styled.div`
   margin-right: 20px;
   ${color.background.primary};
 `;
-const ProfileName = styled.div`
-  ${size.font.fs16};
-  ${size.fontWeight.semiBold};
-  ${size.lineHeight.lh24};
+const ProfileNameWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+const ProfileName = styled.span`
+  ${typography.S3};
+`;
+const StyledArrowIcon = styled(FontAwesomeIcon)`
+  font-size: 13px;
+  transform: rotate(-90deg);
 `;
 export {
   StyledHeader,
@@ -134,5 +125,7 @@ export {
   IconFilter,
   Profile,
   ProfileIcon,
+  ProfileNameWrap,
+  StyledArrowIcon,
   ProfileName,
 };

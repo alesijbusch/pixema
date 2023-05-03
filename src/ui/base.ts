@@ -1,12 +1,11 @@
-import styled from "styled-components";
-import { tokens } from "ui";
+import styled from 'styled-components';
+import { tokens } from 'ui';
 
 const { layout } = tokens;
 
 const Content = styled.div`
-  margin: 24px auto;
+  margin: 0 auto;
   ${layout.media.smallTablet} {
-    margin: 24px auto;
     width: 528px;
   }
   ${layout.media.tablet} {

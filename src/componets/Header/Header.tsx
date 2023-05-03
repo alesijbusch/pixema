@@ -1,4 +1,4 @@
-import { ROUTE } from "routes";
+import { ROUTE } from 'routes';
 import {
   Hamburger,
   HamburgerLine,
@@ -9,19 +9,22 @@ import {
   // StyledLink,
   StyledLogo,
   ProfileIcon,
+  ProfileNameWrap,
+  StyledArrowIcon,
   ProfileName,
-} from "./style";
-import { Input } from "componets";
-import { ChangeEvent, useState } from "react";
-import { Link } from "react-router-dom";
-import { ProfileImg } from "assets";
-
+} from './style';
+import { Input } from 'componets';
+import { ChangeEvent, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ProfileImg } from 'assets';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 export const Header = () => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
 
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
+
   return (
     <StyledHeader>
       <Link to={ROUTE.HOME}>
@@ -31,7 +34,10 @@ export const Header = () => {
         <ProfileIcon>
           <ProfileImg />
         </ProfileIcon>
-        <ProfileName>Sign In</ProfileName>
+        <ProfileNameWrap>
+          <ProfileName>Sign In</ProfileName>
+          <StyledArrowIcon icon={faChevronDown} />
+        </ProfileNameWrap>
       </Profile>
       <Hamburger>
         <HamburgerLine />
