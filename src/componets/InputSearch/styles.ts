@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { Color, tokens } from 'ui';
 
 const { color, size } = tokens;
-const StyledInput = styled.input`
+const StyledInputSearch = styled.input`
   width: 100%;
-  padding: 16px 20px 16px 20px;
+  padding: 16px 40px 16px 20px;
   border: 0;
   border-radius: 10px;
   outline: none;
@@ -29,4 +29,4 @@ const StyledInput = styled.input`
   }
 `;
 
-export { StyledInput };
+export { StyledInputSearch };

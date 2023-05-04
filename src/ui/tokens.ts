@@ -1,4 +1,4 @@
-import { Color } from "ui";
+import { Color } from 'ui';
 
 interface Token {
   color: TokenColor;
@@ -26,6 +26,7 @@ interface TokenColorBackground {
   white: string;
   graphite: string;
   green: string;
+  dark: string;
 }
 
 interface TokenLayout {
@@ -102,55 +103,56 @@ const tokens: Token = {
       white: `background: ${Color.white}`,
       graphite: `background-color: ${Color.graphite}`,
       green: `background-color: ${Color.green}`,
+      dark: `background-color: ${Color.dark}`,
     },
   },
   layout: {
     media: {
-      largeDesktop: "@media (min-width: 1920px)",
-      desktop: "@media (min-width: 1440px)",
-      smallDesktop: "@media (min-width: 1280px)",
-      largeTablet: "@media (min-width: 1024px)",
-      tablet: "@media (min-width: 768px)",
-      smallTablet: "@media (min-width: 568px)",
-      largeMobile: "@media (min-width: 375px)",
-      mobile: "@media (min-width: 320px)",
+      largeDesktop: '@media (min-width: 1920px)',
+      desktop: '@media (min-width: 1440px)',
+      smallDesktop: '@media (min-width: 1280px)',
+      largeTablet: '@media (min-width: 1024px)',
+      tablet: '@media (min-width: 768px)',
+      smallTablet: '@media (min-width: 568px)',
+      largeMobile: '@media (min-width: 375px)',
+      mobile: '@media (min-width: 320px)',
     },
   },
   size: {
     font: {
-      fs14: "font-size: 14px",
-      fs16: "font-size: 16px",
-      fs18: "font-size: 18px",
-      fs20: "font-size: 20px",
-      fs24: "font-size: 24px",
-      fs28: "font-size: 28px",
-      fs32: "font-size: 32px",
-      fs40: "font-size: 40px",
+      fs14: 'font-size: 14px',
+      fs16: 'font-size: 16px',
+      fs18: 'font-size: 18px',
+      fs20: 'font-size: 20px',
+      fs24: 'font-size: 24px',
+      fs28: 'font-size: 28px',
+      fs32: 'font-size: 32px',
+      fs40: 'font-size: 40px',
     },
     fontWeight: {
-      medium: "font-weight: 500",
-      semiBold: "font-weight: 600",
-      bold: "font-weight: 700",
+      medium: 'font-weight: 500',
+      semiBold: 'font-weight: 600',
+      bold: 'font-weight: 700',
     },
     lineHeight: {
-      lh24: "line-height: 24px",
-      lh28: "line-height: 28px",
-      lh32: "line-height: 32px",
-      lh36: "line-height: 36px",
-      lh42: "line-height: 42px",
-      lh48: "line-height: 48px",
-      lh60: "line-height: 60px",
+      lh24: 'line-height: 24px',
+      lh28: 'line-height: 28px',
+      lh32: 'line-height: 32px',
+      lh36: 'line-height: 36px',
+      lh42: 'line-height: 42px',
+      lh48: 'line-height: 48px',
+      lh60: 'line-height: 60px',
     },
     spaces: {
-      mb64: "margin-bottom: 64px",
-      mb56: "margin-bottom: 56px",
-      mb48: "margin-bottom: 48px",
-      mb40: "margin-bottom: 40px",
-      mb32: "margin-bottom: 32px",
-      mb24: "margin-bottom: 24px",
-      mb20: "margin-bottom: 20px",
-      mb16: "margin-bottom: 16px",
-      mb8: "margin-bottom: 8px",
+      mb64: 'margin-bottom: 64px',
+      mb56: 'margin-bottom: 56px',
+      mb48: 'margin-bottom: 48px',
+      mb40: 'margin-bottom: 40px',
+      mb32: 'margin-bottom: 32px',
+      mb24: 'margin-bottom: 24px',
+      mb20: 'margin-bottom: 20px',
+      mb16: 'margin-bottom: 16px',
+      mb8: 'margin-bottom: 8px',
     },
   },
 };

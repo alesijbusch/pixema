@@ -13,7 +13,7 @@ import {
   StyledArrowIcon,
   ProfileName,
 } from './style';
-import { Input } from 'componets';
+import { InputSearch } from 'componets';
 import { ChangeEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ProfileImg } from 'assets';
@@ -45,7 +45,7 @@ export const Header = () => {
         <HamburgerLine />
       </Hamburger>
       <InputWrapper>
-        <Input
+        <InputSearch
           value={search}
           onChange={handleSearch}
           type="text"

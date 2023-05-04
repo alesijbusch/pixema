@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
+import { StyledButton } from './styles';
 
-type Props = {};
-
-const Button = (props: Props) => {
-  return <div>Button</div>;
+interface ButtonProps {
+  name: string;
+}
+export const Button = ({ name }: ButtonProps) => {
+  return <StyledButton type="submit">{name}</StyledButton>;
 };
