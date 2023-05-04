@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Content } from "ui";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Content } from 'ui';
 import {
   Details,
   DetailsGenre,
@@ -19,10 +19,9 @@ import {
   TdCellName,
   TdCellValue,
   Tr,
-} from "./styles";
-import { faBookmark, faCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { spawn } from "child_process";
+} from './styles';
+import { faBookmark, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface MovieProps {
   Title: string;
@@ -46,7 +45,7 @@ export const DetailsPage = () => {
   const [movie, setMovie] = useState<MovieProps | undefined>();
   const { name } = useParams();
 
-  const movieKey = "73417f5e";
+  const movieKey = '73417f5e';
 
   useEffect(() => {
     fetch(`https://www.omdbapi.com/?apikey=${movieKey}&i=${name}&plot=full`)
@@ -59,7 +58,7 @@ export const DetailsPage = () => {
     <Content>
       <Details>
         <DetailsGenre>
-          {movie?.Genre.split(",").join(`, `)}
+          {movie?.Genre.split(',').join(`, `)}
           {/* <FontAwesomeIcon icon={faCircle} /> */}
         </DetailsGenre>
         <DetailsTitle>{movie?.Title}</DetailsTitle>
