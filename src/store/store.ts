@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { moviesReducer } from "store";
+import { movieDetailsReducer, moviesReducer } from "store";
 
 export const store = configureStore({
   reducer: {
     mavies: moviesReducer,
+    mavieDetails: movieDetailsReducer,
   },
 });
 

@@ -12,7 +12,7 @@ export const CardList = ({ movies }: CardItemProps) => {
   return (
     <StyledCardList>
       {movies.map((film) => (
-        <StyledLink to={generatePath(ROUTE.DETAILS, { name: film.imdbID })} key={film.imdbID}>
+        <StyledLink to={generatePath(ROUTE.DETAILS, { imdb: film.imdbID })} key={film.imdbID}>
           <CardItem film={film} />
         </StyledLink>
       ))}

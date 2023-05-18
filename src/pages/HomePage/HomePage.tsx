@@ -7,8 +7,11 @@ export const HomePage = () => {
   const { isLoading, movies, error } = useAppSelector(selectMovies);
   const dispatch = useAppDispatch();
 
+  const words = ["Pirates of the Caribbean", "banana", "fast", "avengers", "apple"];
+  const randomWord = words[Math.floor(Math.random() * words.length)];
+
   useEffect(() => {
-    dispatch(fetchMovies("spider"));
+    dispatch(fetchMovies(randomWord));
   }, [dispatch]);
 
   return (

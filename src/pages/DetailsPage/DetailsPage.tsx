@@ -21,80 +21,80 @@ import {
   Tr,
 } from "./styles";
 import { faBookmark, faCircle } from "@fortawesome/free-solid-svg-icons";
-import { MovieDetailsApi } from "types";
+
+import { fetchMovieDetails, selectMovieDetails, useAppDispatch, useAppSelector } from "store";
 
 export const DetailsPage = () => {
-  const [movie, setMovie] = useState<MovieDetailsApi | undefined>();
-  const { name } = useParams();
-
-  const movieKey = "73417f5e";
-
+  const { imdb } = useParams();
+  const { isLoading, movieDetails, error } = useAppSelector(selectMovieDetails);
+  const dispatch = useAppDispatch();
   useEffect(() => {
-    fetch(`https://www.omdbapi.com/?apikey=${movieKey}&i=${name}&plot=full`)
-      .then((response) => response.json())
-      .then((data) => setMovie(data));
-  }, [name]);
-  console.log(movie);
+    dispatch(fetchMovieDetails(imdb));
+  }, [dispatch]);
 
   return (
     <Content>
-      <Details>
-        <DetailsGenre>
-          {movie?.Genre.split(",").join(", ")}
-          {/* <FontAwesomeIcon icon={faCircle} /> */}
-        </DetailsGenre>
-        <DetailsTitle>{movie?.Title}</DetailsTitle>
-        <StickersGroup>
-          <StickerReating>{movie?.imdbRating}</StickerReating>
-          <StickerDefault>
-            <StyledImdbIcon /> {movie?.imdbRating}
-          </StickerDefault>
-          <StickerDefault>{movie?.Runtime}</StickerDefault>
-        </StickersGroup>
-        <DetailsPosterGroup>
-          <DetailsPoster src={movie?.Poster} alt="" />
-          <StyledFavorites>
-            <StyledFavoritesIcon icon={faBookmark} />
-          </StyledFavorites>
-        </DetailsPosterGroup>
-        <Plot>{movie?.Plot}</Plot>
-        <Table>
-          <Tbody>
-            <Tr>
-              <TdCellName>Year</TdCellName>
-              <TdCellValue>{movie?.Year}</TdCellValue>
-            </Tr>
-            <Tr>
-              <TdCellName>Released</TdCellName>
-              <TdCellValue>{movie?.Released}</TdCellValue>
-            </Tr>
-            <Tr>
-              <TdCellName>BoxOffice</TdCellName>
-              <TdCellValue>{movie?.BoxOffice}</TdCellValue>
-            </Tr>
-            <Tr>
-              <TdCellName>Country</TdCellName>
-              <TdCellValue>{movie?.Country}</TdCellValue>
-            </Tr>
-            <Tr>
-              <TdCellName>Production</TdCellName>
-              <TdCellValue>{movie?.Production}</TdCellValue>
-            </Tr>
-            <Tr>
-              <TdCellName>Actors</TdCellName>
-              <TdCellValue>{movie?.Actors}</TdCellValue>
-            </Tr>
-            <Tr>
-              <TdCellName>Director</TdCellName>
-              <TdCellValue>{movie?.Director}</TdCellValue>
-            </Tr>
-            <Tr>
-              <TdCellName>Writers</TdCellName>
-              <TdCellValue>{movie?.Writer}</TdCellValue>
-            </Tr>
-          </Tbody>
-        </Table>
-      </Details>
+      {isLoading && <div>Loading...</div>}
+      {error && <div>{error}</div>}
+      {movieDetails && (
+        <Details>
+          <DetailsGenre>
+            {movieDetails?.genre.split(",").join(", ")}
+            {/* <FontAwesomeIcon icon={faCircle} /> */}
+          </DetailsGenre>
+          <DetailsTitle>{movieDetails?.title}</DetailsTitle>
+          <StickersGroup>
+            <StickerReating>{movieDetails?.imdbRating}</StickerReating>
+            <StickerDefault>
+              <StyledImdbIcon /> {movieDetails?.imdbRating}
+            </StickerDefault>
+            <StickerDefault>{movieDetails?.runtime}</StickerDefault>
+          </StickersGroup>
+          <DetailsPosterGroup>
+            <DetailsPoster src={movieDetails?.poster} alt="" />
+            <StyledFavorites>
+              <StyledFavoritesIcon icon={faBookmark} />
+            </StyledFavorites>
+          </DetailsPosterGroup>
+          <Plot>{movieDetails?.plot}</Plot>
+          <Table>
+            <Tbody>
+              <Tr>
+                <TdCellName>Year</TdCellName>
+                <TdCellValue>{movieDetails?.year}</TdCellValue>
+              </Tr>
+              <Tr>
+                <TdCellName>Released</TdCellName>
+                <TdCellValue>{movieDetails?.released}</TdCellValue>
+              </Tr>
+              <Tr>
+                <TdCellName>BoxOffice</TdCellName>
+                <TdCellValue>{movieDetails?.boxOffice}</TdCellValue>
+              </Tr>
+              <Tr>
+                <TdCellName>Country</TdCellName>
+                <TdCellValue>{movieDetails?.country}</TdCellValue>
+              </Tr>
+              <Tr>
+                <TdCellName>Production</TdCellName>
+                <TdCellValue>{movieDetails?.production}</TdCellValue>
+              </Tr>
+              <Tr>
+                <TdCellName>Actors</TdCellName>
+                <TdCellValue>{movieDetails?.actors}</TdCellValue>
+              </Tr>
+              <Tr>
+                <TdCellName>Director</TdCellName>
+                <TdCellValue>{movieDetails?.director}</TdCellValue>
+              </Tr>
+              <Tr>
+                <TdCellName>Writers</TdCellName>
+                <TdCellValue>{movieDetails?.writer}</TdCellValue>
+              </Tr>
+            </Tbody>
+          </Table>
+        </Details>
+      )}
     </Content>
   );
 };

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { StyledButton } from "./styles";
 
 interface ButtonProps {
-  name: string;
+  children: ReactNode;
 }
-export const Button = ({ name }: ButtonProps) => {
-  return <StyledButton type="submit">{name}</StyledButton>;
+export const Button = ({ children }: ButtonProps) => {
+  return <StyledButton type="submit">{children}</StyledButton>;
 };

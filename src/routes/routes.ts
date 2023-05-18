@@ -2,7 +2,7 @@ export enum ROUTE {
   HOME = "/pixema",
   FAVORITES = "favorites",
   ACCOUNT = "account",
-  DETAILS = "details/:name",
+  DETAILS = "details/:imdb",
   RESET_PASWORD = "reset-pasword",
   SIGN_IN = "sign-in",
   SIGN_UP = "sign-up",

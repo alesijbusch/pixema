@@ -3,11 +3,13 @@ interface MovieResponseApi {
   Response: string;
   totalResults: string;
 }
+
 interface MovieResponse {
   search: Movie[];
   response: string;
   totalResults: string;
 }
+
 interface MovieApi {
   imdbID: string;
   Title: string;
@@ -15,6 +17,7 @@ interface MovieApi {
   Type: string;
   Poster: string;
 }
+
 interface Movie {
   imdbID: string;
   title: string;
@@ -27,6 +30,7 @@ interface MovieRatingApi {
   Source: string;
   Value: string;
 }
+
 interface MovieDetailsApi {
   Title: string;
   Year: string;
@@ -59,6 +63,7 @@ interface MovieRating {
   source: string;
   value: string;
 }
+
 interface MovieDetails {
   title: string;
   year: string;

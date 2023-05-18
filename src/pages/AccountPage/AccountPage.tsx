@@ -108,8 +108,8 @@ export const AccountPage = () => {
           </AccountFormGroup>
         </AccountFormBlock>
         <ButtonGroup>
-          <Button name="Save" />
-          <Button name="Cancel" />
+          <Button>Save</Button>
+          <Button>Cancel</Button>
         </ButtonGroup>
       </AccountForm>
     </Content>
