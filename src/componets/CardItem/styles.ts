@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import { typography } from 'ui';
-import { tokens } from 'ui';
-import { spaces } from 'ui';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { typography } from "ui";
+import { tokens } from "ui";
+import { spaces } from "ui";
 const { color, layout } = tokens;
 
 const StyledCardItem = styled.div`
@@ -14,10 +14,10 @@ const Title = styled.p`
     ${color.text.primary};
   }
 `;
-const Ganre = styled.span`
-  ${typography.B1}
-  ${color.text.light};
-`;
+// const Ganre = styled.span`
+//   ${typography.B1}
+//   ${color.text.light};
+// `;
 const Poster = styled.img`
   display: block;
   width: 100%;
@@ -33,13 +33,13 @@ const Poster = styled.img`
     height: 394px;
   }
 `;
-const Rating = styled.span`
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  border-radius: 6px;
-  padding: 2px 7px;
-  ${color.background.green};
-  ${typography.B1}
-`;
-export { StyledCardItem, Title, Ganre, Poster, Rating };
+// const Rating = styled.span`
+//   position: absolute;
+//   top: 20px;
+//   left: 20px;
+//   border-radius: 6px;
+//   padding: 2px 7px;
+//   ${color.background.green};
+//   ${typography.B1}
+// `;
+export { StyledCardItem, Title, Poster };

@@ -1,6 +1,6 @@
-import { Input } from 'componets';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { Content } from 'ui';
+import { Input } from "componets";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { Content } from "ui";
 import {
   AccountForm,
   AccountFormBlock,
@@ -9,8 +9,8 @@ import {
   AccountFormTitle,
   ButtonGroup,
   Label,
-} from './styles';
-import { Button } from 'componets/Button/Button';
+} from "./styles";
+import { Button } from "componets/Button/Button";
 
 interface Profile {
   name: string;
@@ -42,12 +42,7 @@ export const AccountPage = () => {
               control={control}
               // rules={getValidateRule("text")}
               render={({ field }) => (
-                <Input
-                  {...field}
-                  placeholder="Your name"
-                  type="text"
-                  id="name"
-                />
+                <Input {...field} placeholder="Your name" type="text" id="name" />
               )}
               name="name"
               defaultValue=""
@@ -59,12 +54,7 @@ export const AccountPage = () => {
               control={control}
               // rules={getValidateRule("text")}
               render={({ field }) => (
-                <Input
-                  {...field}
-                  placeholder="Your email"
-                  type="email"
-                  id="email"
-                />
+                <Input {...field} placeholder="Your email" type="email" id="email" />
               )}
               name="email"
               defaultValue=""
@@ -79,12 +69,7 @@ export const AccountPage = () => {
               control={control}
               // rules={getValidateRule("text")}
               render={({ field }) => (
-                <Input
-                  {...field}
-                  placeholder="Your password"
-                  type="password"
-                  id="password"
-                />
+                <Input {...field} placeholder="Your password" type="password" id="password" />
               )}
               name="password"
               defaultValue=""
@@ -97,12 +82,7 @@ export const AccountPage = () => {
                 control={control}
                 // rules={getValidateRule("text")}
                 render={({ field }) => (
-                  <Input
-                    {...field}
-                    placeholder="New password"
-                    type="password"
-                    id="newPassword"
-                  />
+                  <Input {...field} placeholder="New password" type="password" id="newPassword" />
                 )}
                 name="newPassword"
                 defaultValue=""

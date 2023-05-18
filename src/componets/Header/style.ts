@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { spaces, tokens, typography } from 'ui';
-import { Logo, FilterIcon } from 'assets';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from "styled-components";
+import { spaces, tokens, typography } from "ui";
+import { Logo, FilterIcon } from "assets";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const { color, layout, size } = tokens;
 
 const StyledHeader = styled.div`

@@ -1,3 +1,10 @@
-import { Movie } from "./types";
+import {
+  MovieApi,
+  MovieResponseApi,
+  MovieResponse,
+  Movie,
+  MovieDetailsApi,
+  MovieDetails,
+} from "./types";
 
-export type { Movie };
+export type { MovieApi, MovieResponseApi, MovieResponse, Movie, MovieDetailsApi, MovieDetails };

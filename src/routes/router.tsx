@@ -1,8 +1,4 @@
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from "react-router-dom";
+import { Route, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 
 import {
   AccountPage,
@@ -24,10 +20,10 @@ export const router = createBrowserRouter(
       <Route path={ROUTE.FAVORITES} element={<FavoritesPage />}></Route>
       <Route path={ROUTE.ACCOUNT} element={<AccountPage />}></Route>
       <Route path={ROUTE.DETAILS} element={<DetailsPage />}></Route>
-      <Route path={ROUTE.RESETPASWORD} element={<ResetPaswordPage />}></Route>
-      <Route path={ROUTE.SIGNIN} element={<SignInPage />}></Route>
-      <Route path={ROUTE.SIGNUP} element={<SignUpPage />}></Route>
+      <Route path={ROUTE.RESET_PASWORD} element={<ResetPaswordPage />}></Route>
+      <Route path={ROUTE.SIGN_IN} element={<SignInPage />}></Route>
+      <Route path={ROUTE.SIGN_UP} element={<SignUpPage />}></Route>
       <Route path={ROUTE.TRENDS} element={<TrendsPage />}></Route>
-    </Route>
-  )
+    </Route>,
+  ),
 );

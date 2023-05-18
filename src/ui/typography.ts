@@ -1,5 +1,5 @@
-import { css } from 'styled-components';
-import { tokens } from 'ui';
+import { css } from "styled-components";
+import { tokens } from "ui";
 
 const { layout, size } = tokens;
 

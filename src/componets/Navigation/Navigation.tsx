@@ -1,16 +1,7 @@
-import React from 'react';
-import {
-  NavigationLink,
-  StyledNavigationIcon,
-  StyledNavigation,
-} from './styles';
-import { ROUTE } from 'routes';
-import {
-  faHouse,
-  faBookmark,
-  faFireFlameCurved,
-  faGear,
-} from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import { NavigationLink, StyledNavigationIcon, StyledNavigation } from "./styles";
+import { ROUTE } from "routes";
+import { faHouse, faBookmark, faFireFlameCurved, faGear } from "@fortawesome/free-solid-svg-icons";
 
 export const Navigation = () => {
   return (

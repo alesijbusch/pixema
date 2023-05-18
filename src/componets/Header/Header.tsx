@@ -1,4 +1,4 @@
-import { ROUTE } from 'routes';
+import { ROUTE } from "routes";
 import {
   Hamburger,
   HamburgerLine,
@@ -12,14 +12,14 @@ import {
   ProfileNameWrap,
   StyledArrowIcon,
   ProfileName,
-} from './style';
-import { InputSearch } from 'componets';
-import { ChangeEvent, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { ProfileImg } from 'assets';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+} from "./style";
+import { InputSearch } from "componets";
+import { ChangeEvent, useState } from "react";
+import { Link } from "react-router-dom";
+import { ProfileImg } from "assets";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 export const Header = () => {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -45,12 +45,7 @@ export const Header = () => {
         <HamburgerLine />
       </Hamburger>
       <InputWrapper>
-        <InputSearch
-          value={search}
-          onChange={handleSearch}
-          type="text"
-          placeholder="Search"
-        />
+        <InputSearch value={search} onChange={handleSearch} type="text" placeholder="Search" />
         <IconFilter />
       </InputWrapper>
     </StyledHeader>

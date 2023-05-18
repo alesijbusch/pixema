@@ -1,5 +1,5 @@
-import { Movie } from 'types';
-import { Ganre, Poster, Rating, StyledCardItem, Title } from './styles';
+import { Movie } from "types";
+import { Poster, StyledCardItem, Title } from "./styles";
 
 interface CardItemProps {
   film: Movie;
@@ -8,10 +8,10 @@ interface CardItemProps {
 export const CardItem = ({ film }: CardItemProps) => {
   return (
     <StyledCardItem>
-      <Poster src={film.Poster} />
-      <Title>{film.Title}</Title>
-      <Ganre>Adventure - Action - Fantasy</Ganre>
-      <Rating>7.6</Rating>
+      <Poster src={film.poster} />
+      <Title>{film.title}</Title>
+      {/* <Ganre>Adventure - Action - Fantasy</Ganre>
+      <Rating>7.6</Rating> */}
     </StyledCardItem>
   );
 };

@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import { tokens, typography } from 'ui';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { tokens, typography } from "ui";
 const { color, layout } = tokens;
 
 const StyledNavigation = styled.div``;

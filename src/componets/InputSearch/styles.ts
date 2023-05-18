@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { Color, tokens } from 'ui';
+import { Color, tokens } from "ui";
 
 const { color, size } = tokens;
 const StyledInputSearch = styled.input`

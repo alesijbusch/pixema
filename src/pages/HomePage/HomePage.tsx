@@ -1,25 +1,21 @@
-import { CardList } from 'componets/CardList/CardList';
-import React, { useEffect, useState } from 'react';
-import { Movie } from 'types';
-import { Content } from 'ui';
+import { CardList } from "componets/CardList/CardList";
+import React, { useEffect, useState } from "react";
+import { fetchMovies, selectMovies, useAppDispatch, useAppSelector } from "store";
+import { Content } from "ui";
 
 export const HomePage = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const { isLoading, movies, error } = useAppSelector(selectMovies);
+  const dispatch = useAppDispatch();
 
-  const movieKey = '73417f5e';
   useEffect(() => {
-    fetch(`https://www.omdbapi.com/?apikey=${movieKey}&s=avengers`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.Search) {
-          setMovies(data.Search);
-        }
-      });
-  }, []);
+    dispatch(fetchMovies("spider"));
+  }, [dispatch]);
 
   return (
     <Content>
-      <CardList movies={movies} />
+      {isLoading && <div>Loading...</div>}
+      {error && <div>{error}error</div>}
+      {movies?.length > 0 && <CardList movies={movies} />}
     </Content>
   );
 };
