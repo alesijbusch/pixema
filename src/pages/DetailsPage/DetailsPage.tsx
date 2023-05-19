@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Content } from "ui";
 import {
@@ -12,7 +12,6 @@ import {
   StickerReating,
   StickersGroup,
   StyledFavorites,
-  StyledFavoritesIcon,
   StyledImdbIcon,
   Table,
   Tbody,
@@ -20,9 +19,10 @@ import {
   TdCellValue,
   Tr,
 } from "./styles";
-import { faBookmark, faCircle } from "@fortawesome/free-solid-svg-icons";
 
 import { fetchMovieDetails, selectMovieDetails, useAppDispatch, useAppSelector } from "store";
+import { Spinner } from "componets";
+import { FavoritesIcon } from "assets";
 
 export const DetailsPage = () => {
   const { imdb } = useParams();
@@ -30,11 +30,11 @@ export const DetailsPage = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchMovieDetails(imdb));
-  }, [dispatch]);
+  }, [dispatch, imdb]);
 
   return (
     <Content>
-      {isLoading && <div>Loading...</div>}
+      {isLoading && <Spinner />}
       {error && <div>{error}</div>}
       {movieDetails && (
         <Details>
@@ -53,7 +53,7 @@ export const DetailsPage = () => {
           <DetailsPosterGroup>
             <DetailsPoster src={movieDetails?.poster} alt="" />
             <StyledFavorites>
-              <StyledFavoritesIcon icon={faBookmark} />
+              <FavoritesIcon />
             </StyledFavorites>
           </DetailsPosterGroup>
           <Plot>{movieDetails?.plot}</Plot>

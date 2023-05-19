@@ -8,6 +8,8 @@ interface Token {
 interface TokenColor {
   text: TokenColorText;
   background: TokenColorBackground;
+  themeText: TokenColorThemeText;
+  themeBackground: TokenColorThemeBackground;
 }
 interface TokenColorText {
   primary: string;
@@ -28,7 +30,13 @@ interface TokenColorBackground {
   green: string;
   dark: string;
 }
-
+interface TokenColorThemeText {
+  primaryText: string;
+}
+interface TokenColorThemeBackground {
+  primaryBg: string;
+  inputBg: string;
+}
 interface TokenLayout {
   media: TokenLayoutMedia;
 }
@@ -105,19 +113,28 @@ const tokens: Token = {
       green: `background-color: ${Color.green}`,
       dark: `background-color: ${Color.dark}`,
     },
-  },
-  layout: {
-    media: {
-      largeDesktop: "@media (min-width: 1920px)",
-      desktop: "@media (min-width: 1440px)",
-      smallDesktop: "@media (min-width: 1280px)",
-      largeTablet: "@media (min-width: 1024px)",
-      tablet: "@media (min-width: 768px)",
-      smallTablet: "@media (min-width: 568px)",
-      largeMobile: "@media (min-width: 375px)",
-      mobile: "@media (min-width: 320px)",
+    themeText: {
+      primaryText: `color: ${Color.primary_text}`,
+    },
+    themeBackground: {
+      primaryBg: `background: ${Color.primary_bg}`,
+      inputBg: `background: ${Color.input_bg}`,
     },
   },
+
+  layout: {
+    media: {
+      largeDesktop: "@media (min-width: 1920px)", //fluid
+      desktop: "@media (min-width: 1440px)", //xxl
+      smallDesktop: "@media (min-width: 1280px)", //xl
+      largeTablet: "@media (min-width: 1024px)", //lg
+      tablet: "@media (min-width: 768px)", //md
+      smallTablet: "@media (min-width: 568px)", //sm
+      largeMobile: "@media (min-width: 375px)", //
+      mobile: "@media (min-width: 320px)", //xs
+    },
+  },
+
   size: {
     font: {
       fs14: "font-size: 14px",

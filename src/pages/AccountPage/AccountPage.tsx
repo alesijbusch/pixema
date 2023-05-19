@@ -28,7 +28,6 @@ export const AccountPage = () => {
     //formState: { errors },
   } = useForm<Profile>({});
   const onSubmit: SubmitHandler<Profile> = (data) => {
-    console.log(data);
     reset();
   };
   return (

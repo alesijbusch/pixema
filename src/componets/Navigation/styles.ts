@@ -1,8 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { tokens, typography } from "ui";
-const { color, layout } = tokens;
+import { Color, tokens, typography } from "ui";
+const { color } = tokens;
 
 const StyledNavigation = styled.div``;
 
@@ -15,11 +14,15 @@ const NavigationLink = styled(Link)`
   ${color.text.secondary};
   :hover {
     ${color.text.primaryLight};
+    svg {
+      path {
+        fill: ${Color.primaryLight};
+      }
+    }
+  }
+  svg {
+    margin-right: 20px;
   }
 `;
-const StyledNavigationIcon = styled(FontAwesomeIcon)`
-  margin-right: 20px;
-  font-size: 20px;
-`;
 
-export { StyledNavigation, NavigationLink, StyledNavigationIcon };
+export { StyledNavigation, NavigationLink };

@@ -1,25 +1,25 @@
 import React from "react";
-import { NavigationLink, StyledNavigationIcon, StyledNavigation } from "./styles";
+import { NavigationLink, StyledNavigation } from "./styles";
 import { ROUTE } from "routes";
-import { faHouse, faBookmark, faFireFlameCurved, faGear } from "@fortawesome/free-solid-svg-icons";
+import { FavoritesIcon, HomeIcon, SettingsIcon, TrendsIcon } from "assets";
 
 export const Navigation = () => {
   return (
     <StyledNavigation>
       <NavigationLink to={ROUTE.HOME}>
-        <StyledNavigationIcon icon={faHouse} />
+        <HomeIcon />
         Home
       </NavigationLink>
       <NavigationLink to={ROUTE.TRENDS}>
-        <StyledNavigationIcon icon={faFireFlameCurved} flip="horizontal" />
+        <TrendsIcon />
         Trends
       </NavigationLink>
       <NavigationLink to={ROUTE.FAVORITES}>
-        <StyledNavigationIcon icon={faBookmark} />
+        <FavoritesIcon />
         Favorites
       </NavigationLink>
       <NavigationLink to={ROUTE.ACCOUNT}>
-        <StyledNavigationIcon icon={faGear} />
+        <SettingsIcon />
         Settings
       </NavigationLink>
     </StyledNavigation>

@@ -1,5 +1,6 @@
+import { Spinner } from "componets";
 import { CardList } from "componets/CardList/CardList";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { fetchMovies, selectMovies, useAppDispatch, useAppSelector } from "store";
 import { Content } from "ui";
 
@@ -16,8 +17,8 @@ export const HomePage = () => {
 
   return (
     <Content>
-      {isLoading && <div>Loading...</div>}
-      {error && <div>{error}error</div>}
+      {isLoading && <Spinner />}
+      {error && <div>{error}</div>}
       {movies?.length > 0 && <CardList movies={movies} />}
     </Content>
   );

@@ -11,4 +11,9 @@ export enum Color {
   green = "#00A340",
   yellow = "#F3A608",
   orange = "#F45D2D",
+  primary_text = "var(--primary-text)",
+  primary_bg = "var(--primary-bg)",
+  secondary_bg = "var(--secondary-bg)",
+  block_bg = "var(--block-bg)",
+  input_bg = "var(--input_bg)",
 }

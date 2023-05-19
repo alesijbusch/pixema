@@ -17,7 +17,6 @@ import { InputSearch } from "componets";
 import { ChangeEvent, useState } from "react";
 import { Link } from "react-router-dom";
 import { ProfileImg } from "assets";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 export const Header = () => {
   const [search, setSearch] = useState("");
 
@@ -36,7 +35,8 @@ export const Header = () => {
         </ProfileIcon>
         <ProfileNameWrap>
           <ProfileName>Sign In</ProfileName>
-          <StyledArrowIcon icon={faChevronDown} />
+          <StyledArrowIcon />
+          {/* <StyledArrowIcon icon={faChevronDown} /> */}
         </ProfileNameWrap>
       </Profile>
       <Hamburger>

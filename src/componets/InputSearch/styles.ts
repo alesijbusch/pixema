@@ -15,7 +15,7 @@ const StyledInputSearch = styled.input`
   ${size.fontWeight.medium};
   ${size.lineHeight.lh24};
   ${color.text.white};
-  ${color.background.graphite};
+  ${color.themeBackground.inputBg};
 
   ::placeholder {
     ${color.text.secondary};

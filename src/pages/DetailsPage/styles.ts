@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { ImdbIcon } from "assets";
 
-import { spaces, tokens, typography } from "ui";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Color, spaces, tokens, typography } from "ui";
 const { color, layout } = tokens;
 
 const Details = styled.div`
@@ -79,10 +78,7 @@ const DetailsPoster = styled.img`
     width: 100%;
   }
 `;
-const StyledFavoritesIcon = styled(FontAwesomeIcon)`
-  font-size: 18px;
-  ${color.text.light};
-`;
+
 const StyledFavorites = styled.div`
   padding: 19px 60px;
   border-radius: 10px;
@@ -90,10 +86,13 @@ const StyledFavorites = styled.div`
   cursor: pointer;
   ${color.background.graphite};
   :hover {
-    ${StyledFavoritesIcon} {
-      ${color.text.white};
+    svg {
+      path {
+        fill: ${Color.white};
+      }
     }
   }
+
   ${layout.media.tablet} {
     padding: 19px 45px;
   }
@@ -144,7 +143,6 @@ export {
   StickerDefault,
   DetailsPoster,
   StyledImdbIcon,
-  StyledFavoritesIcon,
   StyledFavorites,
   DetailsPosterGroup,
   Plot,

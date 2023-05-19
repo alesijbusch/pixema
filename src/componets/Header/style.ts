@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { spaces, tokens, typography } from "ui";
-import { Logo, FilterIcon } from "assets";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const { color, layout, size } = tokens;
+import { Logo, FilterIcon, ProfileArrowIcon } from "assets";
+
+const { color, layout } = tokens;
 
 const StyledHeader = styled.div`
   display: flex;
@@ -111,7 +111,7 @@ const ProfileNameWrap = styled.div`
 const ProfileName = styled.span`
   ${typography.S3};
 `;
-const StyledArrowIcon = styled(FontAwesomeIcon)`
+const StyledArrowIcon = styled(ProfileArrowIcon)`
   font-size: 13px;
   transform: rotate(-90deg);
 `;

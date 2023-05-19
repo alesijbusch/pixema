@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { typography } from "ui";
 import { tokens } from "ui";
@@ -10,6 +9,7 @@ const StyledCardItem = styled.div`
 `;
 const Title = styled.p`
   ${typography.S2}
+  ${color.themeText.primaryText};
   :hover {
     ${color.text.primary};
   }
