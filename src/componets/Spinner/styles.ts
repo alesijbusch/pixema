@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Color } from "ui";
 const StyledSpinner = styled.div`
   height: 100vh;
   width: 100%;
@@ -9,7 +10,7 @@ const StyledSpinner = styled.div`
 const Loading = styled.span`
   width: 80px;
   height: 80px;
-  border: 5px solid #fff;
+  border: 5px solid ${Color.primary};
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;

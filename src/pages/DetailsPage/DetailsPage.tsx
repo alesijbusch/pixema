@@ -19,7 +19,6 @@ import {
   TdCellValue,
   Tr,
 } from "./styles";
-
 import { fetchMovieDetails, selectMovieDetails, useAppDispatch, useAppSelector } from "store";
 import { Spinner } from "componets";
 import { FavoritesIcon } from "assets";
