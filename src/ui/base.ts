@@ -5,11 +5,11 @@ const { layout } = tokens;
 
 const Content = styled.div`
   margin: 0 auto;
+  width: 100%;
   ${layout.media.smallTablet} {
     width: 528px;
   }
   ${layout.media.tablet} {
-    margin: 0 auto;
     width: 688px;
   }
   ${layout.media.largeTablet} {

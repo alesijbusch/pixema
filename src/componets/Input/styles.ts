@@ -1,8 +1,8 @@
 import styled from "styled-components";
-
 import { Color, tokens } from "ui";
 
 const { color, size } = tokens;
+
 const StyledInput = styled.input`
   width: 100%;
   padding: 16px 20px 16px 20px;

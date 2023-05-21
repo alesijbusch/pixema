@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Content } from "ui";
 import {
   Details,
   DetailsGenre,
+  DetailsPageTitle,
   DetailsPoster,
   DetailsPosterGroup,
   DetailsTitle,
   Plot,
+  SliderWrapper,
   StickerDefault,
   StickerReating,
   StickersGroup,
@@ -20,16 +22,63 @@ import {
   Tr,
 } from "./styles";
 import { fetchMovieDetails, selectMovieDetails, useAppDispatch, useAppSelector } from "store";
-import { Spinner } from "componets";
+import { Slider, Spinner } from "componets";
 import { FavoritesIcon } from "assets";
 
+import { Movie } from "types";
+import { transformMovieApi } from "mappers";
+
 export const DetailsPage = () => {
+  const [movies, setMovies] = useState<Movie[]>([]);
   const { imdb } = useParams();
   const { isLoading, movieDetails, error } = useAppSelector(selectMovieDetails);
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     dispatch(fetchMovieDetails(imdb));
   }, [dispatch, imdb]);
+
+  const getRandomWord = (word: string) => {
+    const wordsToRemove = [
+      "are",
+      "am",
+      "is",
+      "the",
+      "of",
+      "in",
+      "a",
+      "at",
+      "on",
+      "to",
+      "for",
+      "from",
+      "i",
+      "my",
+    ];
+
+    const processWords = new RegExp("\\b(" + wordsToRemove.join("|") + ")\\b", "gi");
+
+    const cleanString = word
+      .replace(processWords, "")
+      .split(" ")
+      .filter((item) => item);
+    return cleanString[Math.floor(Math.random() * cleanString.length)];
+  };
+
+  const movieKey = "73417f5e";
+  useEffect(() => {
+    fetch(`https://www.omdbapi.com/?apikey=${movieKey}&i=${imdb}`)
+      .then((response) => response.json())
+      .then((data) => getRandomWord(data.Title))
+      .then((data) => fetch(`https://www.omdbapi.com/?apikey=${movieKey}&s=${data}`))
+      .then((data) => data.json())
+      .then((data) => transformMovieApi(data))
+      .then((data) => {
+        if (data.search) {
+          setMovies(data.search);
+        }
+      });
+  }, [imdb]);
 
   return (
     <Content>
@@ -92,6 +141,10 @@ export const DetailsPage = () => {
               </Tr>
             </Tbody>
           </Table>
+          <SliderWrapper>
+            <DetailsPageTitle>Recommendations</DetailsPageTitle>
+            <Slider name={movies} />
+          </SliderWrapper>
         </Details>
       )}
     </Content>

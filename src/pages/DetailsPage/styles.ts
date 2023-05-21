@@ -12,7 +12,8 @@ const Details = styled.div`
       "my-poster my-title"
       "my-poster my-sticker"
       "my-poster my-plot"
-      "my-poster my-table";
+      "my-poster my-table"
+      "my-poster my-slider";
   }
 `;
 const DetailsGenre = styled.p`
@@ -134,7 +135,18 @@ const TdCellValue = styled.td`
   ${typography.B1};
   ${color.text.white};
 `;
-
+const SliderWrapper = styled.div`
+  ${layout.media.tablet} {
+    grid-area: my-slider;
+  }
+`;
+const DetailsPageTitle = styled.h2`
+  ${typography.H2}
+  margin-bottom: -32px;
+  ${layout.media.tablet} {
+    margin-bottom: -42px;
+  }
+`;
 export {
   DetailsGenre,
   DetailsTitle,
@@ -152,4 +164,6 @@ export {
   TdCellName,
   TdCellValue,
   Details,
+  SliderWrapper,
+  DetailsPageTitle,
 };
