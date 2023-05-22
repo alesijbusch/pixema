@@ -10,6 +10,7 @@ const StyledCardItem = styled.div`
 const Title = styled.p`
   ${typography.S2}
   ${color.themeText.primaryText};
+  transition: 0.3s all ease-in-out;
   :hover {
     ${color.text.primary};
   }

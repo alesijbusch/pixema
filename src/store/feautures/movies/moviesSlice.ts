@@ -44,7 +44,7 @@ const moviesSlice = createSlice({
     });
     builder.addCase(fetchMovies.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.movies = payload.search;
+      state.movies.push(...payload.search);
     });
     builder.addCase(fetchMovies.rejected, (state, { payload }) => {
       if (payload) {
