@@ -8,4 +8,5 @@ export enum ROUTE {
   SIGN_IN = "sign-in",
   SIGN_UP = "sign-up",
   TRENDS = "trends",
+  DETAILS_TRENDS = "../details/:imdb",
 }
