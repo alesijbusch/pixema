@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Color, tokens, typography } from "ui";
 const { color } = tokens;
 
-const StyledNavigation = styled.div``;
+const StyledNavigation = styled.nav``;
 
 const NavigationLink = styled(Link)`
   display: flex;
@@ -12,11 +12,14 @@ const NavigationLink = styled(Link)`
   margin-bottom: 40px;
   ${typography.S1}
   ${color.text.secondary};
+  transition: 0.3s all ease-in-out;
   :hover {
     ${color.text.primaryLight};
+    transition: 0.3s all ease-in-out;
     svg {
       path {
         fill: ${Color.primaryLight};
+        transition: 0.3s all ease-in-out;
       }
     }
   }

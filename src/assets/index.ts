@@ -7,6 +7,8 @@ import { ReactComponent as TrendsIcon } from "./icons/trends.svg";
 import { ReactComponent as FavoritesIcon } from "./icons/favorites.svg";
 import { ReactComponent as HomeIcon } from "./icons/home.svg";
 import { ReactComponent as SettingsIcon } from "./icons/settings.svg";
+import { ReactComponent as BurgerOpenIcon } from "./icons/burger-open.svg";
+import { ReactComponent as BurgerCloseIcon } from "./icons/burger-close.svg";
 import ArrowPrevIcon from "./icons/arrow-prev.svg";
 import ArrowNextIcon from "./icons/arrow-next.svg";
 
@@ -22,4 +24,6 @@ export {
   ProfileArrowIcon,
   ArrowPrevIcon,
   ArrowNextIcon,
+  BurgerOpenIcon,
+  BurgerCloseIcon,
 };

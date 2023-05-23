@@ -53,6 +53,11 @@ const SwiperSlideItem = styled(SwiperSlide)``;
 const StyledLinkSwiper = styled(Link)`
   ${color.text.white};
   text-decoration: none;
+  :hover {
+    p {
+      ${color.text.primary};
+    }
+  }
 `;
 
 export { StyledSlider, SwiperContainer, SwiperSlideItem, StyledLinkSwiper };

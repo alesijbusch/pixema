@@ -29,6 +29,7 @@ interface TokenColorBackground {
   graphite: string;
   green: string;
   dark: string;
+  black: string;
 }
 interface TokenColorThemeText {
   primaryText: string;
@@ -112,6 +113,7 @@ const tokens: Token = {
       graphite: `background-color: ${Color.graphite}`,
       green: `background-color: ${Color.green}`,
       dark: `background-color: ${Color.dark}`,
+      black: `background-color: ${Color.black}`,
     },
     themeText: {
       primaryText: `color: ${Color.primary_text}`,

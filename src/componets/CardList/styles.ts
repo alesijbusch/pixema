@@ -27,5 +27,10 @@ const StyledCardList = styled.div`
 const StyledLink = styled(Link)`
   ${color.text.white};
   text-decoration: none;
+  :hover {
+    p {
+      ${color.text.primary};
+    }
+  }
 `;
 export { StyledCardList, StyledLink };

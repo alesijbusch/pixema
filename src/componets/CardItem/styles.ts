@@ -11,14 +11,8 @@ const Title = styled.p`
   ${typography.S2}
   ${color.themeText.primaryText};
   transition: 0.3s all ease-in-out;
-  :hover {
-    ${color.text.primary};
-  }
 `;
-// const Ganre = styled.span`
-//   ${typography.B1}
-//   ${color.text.light};
-// `;
+
 const Poster = styled.img`
   display: block;
   width: 100%;
@@ -34,13 +28,5 @@ const Poster = styled.img`
     height: 394px;
   }
 `;
-// const Rating = styled.span`
-//   position: absolute;
-//   top: 20px;
-//   left: 20px;
-//   border-radius: 6px;
-//   padding: 2px 7px;
-//   ${color.background.green};
-//   ${typography.B1}
-// `;
+
 export { StyledCardItem, Title, Poster };

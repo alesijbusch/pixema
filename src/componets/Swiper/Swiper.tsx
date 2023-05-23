@@ -32,6 +32,9 @@ export const Slider = ({ name }: SliderProps) => {
             slidesPerView: 3,
           },
           1280: {
+            slidesPerView: 3,
+          },
+          1440: {
             slidesPerView: 2,
           },
           1920: {

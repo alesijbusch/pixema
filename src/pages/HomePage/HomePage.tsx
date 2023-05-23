@@ -21,7 +21,7 @@ export const HomePage = () => {
     <Content>
       {isLoading && <Spinner />}
       {error && <div>{error}</div>}
-      {movies?.length > 0 && <CardList movies={movies} />}
+      {movies.length > 0 && <CardList movies={movies} />}
       {movies.length && (
         <StyledButton type="button" onClick={handlePage}>
           Show more
