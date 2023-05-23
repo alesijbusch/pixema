@@ -50,7 +50,7 @@ export const Slider = ({ name }: SliderProps) => {
           return (
             <SwiperSlideItem key={film.imdbID}>
               <StyledLinkSwiper
-                to={generatePath(ROUTE.DETAILS, { imdb: film.imdbID })}
+                to={generatePath(ROUTE.RECOMMENDATIONS, { imdb: film.imdbID })}
                 key={film.imdbID}
               >
                 <CardItem film={film} />
