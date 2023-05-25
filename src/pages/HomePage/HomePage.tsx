@@ -1,9 +1,8 @@
-import { Spinner } from "componets";
+import { ShowMore, Spinner } from "componets";
 import { CardList } from "componets/CardList/CardList";
 import React, { useEffect, useState } from "react";
 import { fetchMovies, selectMovies, useAppDispatch, useAppSelector } from "store";
 import { Content } from "ui";
-import { StyledButton } from "./styles";
 import { ROUTE } from "routes";
 
 export const HomePage = () => {
@@ -23,11 +22,7 @@ export const HomePage = () => {
       {isLoading && <Spinner />}
       {error && <div>{error}</div>}
       {movies.length > 0 && <CardList movies={movies} link={ROUTE.DETAILS} />}
-      {movies.length && (
-        <StyledButton type="button" onClick={handlePage}>
-          Show more
-        </StyledButton>
-      )}
+      {movies.length > 9 && <ShowMore onClick={handlePage} />}
     </Content>
   );
 };

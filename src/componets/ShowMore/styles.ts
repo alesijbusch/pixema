@@ -3,7 +3,7 @@ import { Color, tokens } from "ui";
 
 const { layout } = tokens;
 
-const StyledButton = styled.button`
+const StyledMoreProps = styled.button`
   align-self: center;
   border-radius: 40px;
   border: none;
@@ -26,4 +26,4 @@ const StyledButton = styled.button`
     background-color: ${Color.primaryLight};
   }
 `;
-export { StyledButton };
+export { StyledMoreProps };

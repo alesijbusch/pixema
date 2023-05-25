@@ -8,6 +8,7 @@ import { Navigation } from "./Navigation/Navigation";
 import { Input } from "./Input/Input";
 import { Spinner } from "./Spinner/Spinner";
 import { Slider } from "./Swiper/Swiper";
+import { ShowMore } from "./ShowMore/ShowMore";
 
 export {
   Header,
@@ -20,4 +21,5 @@ export {
   Input,
   Spinner,
   Slider,
+  ShowMore,
 };
