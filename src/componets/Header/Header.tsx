@@ -11,18 +11,26 @@ import {
   ProfileName,
 } from "./style";
 import { BurgerMenu, InputSearch } from "componets";
-import { ChangeEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { Link, useNavigate, generatePath } from "react-router-dom";
 import { ProfileImg } from "assets";
-import { useToggle, useWindowSize } from "hooks";
+import { useDebounce, useToggle, useWindowSize } from "hooks";
+
 export const Header = () => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState<string>("");
   const [isMenuOpen, toggleMenu] = useToggle();
   const { width = 0 } = useWindowSize();
   const isMobile = width < 1440;
-  const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value);
+
+  const navigate = useNavigate();
+  const debaunceSearch = useDebounce(search);
+
+  const handleSearch = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
   };
+  useEffect(() => {
+    debaunceSearch && navigate(generatePath(ROUTE.SEARCH, { title: debaunceSearch }));
+  }, [debaunceSearch]);
 
   return (
     <StyledHeader>
@@ -40,7 +48,15 @@ export const Header = () => {
       </Profile>
       {isMobile && <BurgerMenu isMobile={isMobile} handleClose={toggleMenu} isOpen={isMenuOpen} />}
       <InputWrapper>
-        <InputSearch value={search} onChange={handleSearch} type="text" placeholder="Search" />
+        <form onSubmit={handleSearch}>
+          <InputSearch
+            value={search}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)}
+            type="text"
+            placeholder="Search"
+          />
+        </form>
+
         <IconFilter />
       </InputWrapper>
     </StyledHeader>

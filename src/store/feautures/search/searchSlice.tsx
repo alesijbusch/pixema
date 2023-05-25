@@ -3,22 +3,24 @@ import axios, { AxiosError } from "axios";
 import { transformMovieApi } from "mappers";
 import { Movie, MovieResponse, MovieResponseApi } from "types";
 
-interface trendState {
-  trends: Movie[];
+interface searchState {
+  search: Movie[];
   isLoading: boolean;
   error: string | null;
 }
-
+interface OptionProps {
+  title: string | undefined;
+}
 const movieKey = "73417f5e";
 
-export const fetchTrends = createAsyncThunk<
+export const fetchSearch = createAsyncThunk<
   MovieResponse,
   string | undefined,
   { rejectValue: string }
->("trends/fetchTrends", async (title, { rejectWithValue }) => {
+>("search/fetchSearch", async (options, { rejectWithValue }) => {
   try {
     const { data } = await axios.get<MovieResponseApi>(
-      `https://www.omdbapi.com/?apikey=${movieKey}&s=${title}`,
+      `https://www.omdbapi.com/?apikey=${movieKey}&s=${options}`,
     );
     return transformMovieApi(data);
   } catch (error) {
@@ -27,26 +29,26 @@ export const fetchTrends = createAsyncThunk<
   }
 });
 
-const initialState: trendState = {
-  trends: [],
+const initialState: searchState = {
+  search: [],
   isLoading: false,
   error: null,
 };
 
-const trendsSlice = createSlice({
-  name: "trends",
+const searchSlice = createSlice({
+  name: "search",
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder.addCase(fetchTrends.pending, (state) => {
+    builder.addCase(fetchSearch.pending, (state) => {
       state.isLoading = true;
       state.error = null;
     });
-    builder.addCase(fetchTrends.fulfilled, (state, { payload }) => {
+    builder.addCase(fetchSearch.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.trends = payload.search;
+      state.search = payload.search;
     });
-    builder.addCase(fetchTrends.rejected, (state, { payload }) => {
+    builder.addCase(fetchSearch.rejected, (state, { payload }) => {
       if (payload) {
         state.isLoading = false;
         state.error = payload;
@@ -55,4 +57,4 @@ const trendsSlice = createSlice({
   },
 });
 
-export default trendsSlice.reducer;
+export default searchSlice.reducer;

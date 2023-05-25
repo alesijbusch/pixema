@@ -6,6 +6,7 @@ import { ResetPaswordPage } from "../pages/ResetPaswordPage/ResetPaswordPage";
 import { SignInPage } from "../pages/SignInPage/SignInPage";
 import { SignUpPage } from "../pages/SignUpPage/SignUpPage";
 import { TrendsPage } from "../pages/TrendsPage/TrendsPage";
+import { SearchPage } from "./SearchPage/SearchPage";
 
 export {
   FavoritesPage,
@@ -16,4 +17,5 @@ export {
   SignInPage,
   SignUpPage,
   TrendsPage,
+  SearchPage,
 };
