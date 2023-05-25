@@ -90,54 +90,54 @@ export const DetailsPage = () => {
             {movieDetails?.genre.split(",").join(", ")}
             {/* <FontAwesomeIcon icon={faCircle} /> */}
           </DetailsGenre>
-          <DetailsTitle>{movieDetails?.title}</DetailsTitle>
+          <DetailsTitle>{movieDetails.title}</DetailsTitle>
           <StickersGroup>
-            <StickerReating>{movieDetails?.imdbRating}</StickerReating>
+            <StickerReating>{movieDetails.imdbRating}</StickerReating>
             <StickerDefault>
-              <StyledImdbIcon /> {movieDetails?.imdbRating}
+              <StyledImdbIcon /> {movieDetails.imdbRating}
             </StickerDefault>
-            <StickerDefault>{movieDetails?.runtime}</StickerDefault>
+            <StickerDefault>{movieDetails.runtime}</StickerDefault>
           </StickersGroup>
           <DetailsPosterGroup>
-            <DetailsPoster src={movieDetails?.poster} alt="" />
+            <DetailsPoster src={movieDetails.poster} alt="" />
             <StyledFavorites>
               <FavoritesIcon />
             </StyledFavorites>
           </DetailsPosterGroup>
-          <Plot>{movieDetails?.plot}</Plot>
+          <Plot>{movieDetails.plot}</Plot>
           <Table>
             <Tbody>
               <Tr>
                 <TdCellName>Year</TdCellName>
-                <TdCellValue>{movieDetails?.year}</TdCellValue>
+                <TdCellValue>{movieDetails.year}</TdCellValue>
               </Tr>
               <Tr>
                 <TdCellName>Released</TdCellName>
-                <TdCellValue>{movieDetails?.released}</TdCellValue>
+                <TdCellValue>{movieDetails.released}</TdCellValue>
               </Tr>
               <Tr>
                 <TdCellName>BoxOffice</TdCellName>
-                <TdCellValue>{movieDetails?.boxOffice}</TdCellValue>
+                <TdCellValue>{movieDetails.boxOffice}</TdCellValue>
               </Tr>
               <Tr>
                 <TdCellName>Country</TdCellName>
-                <TdCellValue>{movieDetails?.country}</TdCellValue>
+                <TdCellValue>{movieDetails.country}</TdCellValue>
               </Tr>
               <Tr>
                 <TdCellName>Production</TdCellName>
-                <TdCellValue>{movieDetails?.production}</TdCellValue>
+                <TdCellValue>{movieDetails.production}</TdCellValue>
               </Tr>
               <Tr>
                 <TdCellName>Actors</TdCellName>
-                <TdCellValue>{movieDetails?.actors}</TdCellValue>
+                <TdCellValue>{movieDetails.actors}</TdCellValue>
               </Tr>
               <Tr>
                 <TdCellName>Director</TdCellName>
-                <TdCellValue>{movieDetails?.director}</TdCellValue>
+                <TdCellValue>{movieDetails.director}</TdCellValue>
               </Tr>
               <Tr>
                 <TdCellName>Writers</TdCellName>
-                <TdCellValue>{movieDetails?.writer}</TdCellValue>
+                <TdCellValue>{movieDetails.writer}</TdCellValue>
               </Tr>
             </Tbody>
           </Table>
