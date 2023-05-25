@@ -9,6 +9,7 @@ import {
   ProfileNameWrap,
   StyledArrowIcon,
   ProfileName,
+  SearchForm,
 } from "./style";
 import { BurgerMenu, InputSearch } from "componets";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
@@ -27,6 +28,9 @@ export const Header = () => {
 
   const handleSearch = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+  };
+  const handleSearchValue = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value);
   };
   useEffect(() => {
     debaunceSearch && navigate(generatePath(ROUTE.SEARCH, { title: debaunceSearch }));
@@ -48,15 +52,14 @@ export const Header = () => {
       </Profile>
       {isMobile && <BurgerMenu isMobile={isMobile} handleClose={toggleMenu} isOpen={isMenuOpen} />}
       <InputWrapper>
-        <form onSubmit={handleSearch}>
+        <SearchForm onSubmit={handleSearch}>
           <InputSearch
             value={search}
-            onChange={(event: ChangeEvent<HTMLInputElement>) => setSearch(event.target.value)}
+            onChange={handleSearchValue}
             type="text"
             placeholder="Search"
           />
-        </form>
-
+        </SearchForm>
         <IconFilter />
       </InputWrapper>
     </StyledHeader>

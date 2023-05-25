@@ -8,9 +8,7 @@ interface searchState {
   isLoading: boolean;
   error: string | null;
 }
-interface OptionProps {
-  title: string | undefined;
-}
+
 const movieKey = "73417f5e";
 
 export const fetchSearch = createAsyncThunk<

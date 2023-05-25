@@ -115,9 +115,11 @@ const StyledArrowIcon = styled(ProfileArrowIcon)`
   font-size: 13px;
   transform: rotate(-90deg);
 `;
+
+const SearchForm = styled.form``;
+
 export {
   StyledHeader,
-  // StyledLink,
   StyledLogo,
   Hamburger,
   HamburgerLine,
@@ -128,4 +130,5 @@ export {
   ProfileNameWrap,
   StyledArrowIcon,
   ProfileName,
+  SearchForm,
 };
