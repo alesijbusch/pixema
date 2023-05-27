@@ -10,4 +10,6 @@ export enum ROUTE {
   SEARCH = "search/:title",
   RECOMMENDATIONS = "../details/:imdb",
   DETAILS_TRENDS = "../details/:imdb",
+  BACK_SIGN_UP = "../sign-up",
+  BACK_SIGN_IN = "../sign-in",
 }

@@ -11,6 +11,7 @@ const StyledButton = styled.button`
   ${color.background.primary};
   border-radius: 10px;
   border: 0;
+  transition: 0.3s all ease-in-out;
   cursor: pointer;
   :hover {
     ${color.background.primaryLight};

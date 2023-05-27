@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { tokens } from "ui";
+import { spaces, tokens } from "ui";
 
 const { layout } = tokens;
 
@@ -23,4 +23,16 @@ const Content = styled.div`
   }
 `;
 
-export { Content };
+const Form = styled.form``;
+const Label = styled.label`
+  display: block;
+  margin-bottom: 10px;
+`;
+const InputGroup = styled.div``;
+const FormInner = styled.div`
+  display: grid;
+  margin-top: 40px;
+  grid-gap: 24px;
+  ${spaces.mb40}
+`;
+export { Content, Form, Label, InputGroup, FormInner };

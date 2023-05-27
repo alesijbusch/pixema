@@ -25,6 +25,14 @@ export const Navigation = ({ handleClose }: NavigationProps) => {
         <SettingsIcon />
         Settings
       </NavigationLink>
+      <NavigationLink to={ROUTE.SIGN_UP} onClick={handleClose}>
+        <SettingsIcon />
+        SIGN_UP
+      </NavigationLink>
+      <NavigationLink to={ROUTE.SIGN_IN} onClick={handleClose}>
+        <SettingsIcon />
+        SIGN_IN
+      </NavigationLink>
     </StyledNavigation>
   );
 };

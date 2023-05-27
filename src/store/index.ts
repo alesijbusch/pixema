@@ -3,6 +3,7 @@ import moviesReducer from "./feautures/movies/moviesSlice";
 import movieDetailsReducer from "./feautures/movieDetails/movieDetailsSlice";
 import trendsReducer from "./feautures/trends/trendsSlice";
 import searchReducer from "./feautures/search/searchSlice";
+import userReducer from "./feautures/user/userSlice";
 import { fetchMovies } from "./feautures/movies/moviesSlice";
 import { selectMovies } from "./selectors/moviesSelectors";
 import { fetchMovieDetails } from "./feautures/movieDetails/movieDetailsSlice";
@@ -11,6 +12,7 @@ import { fetchTrends } from "./feautures/trends/trendsSlice";
 import { selectTrends } from "./selectors/trendsSelectors";
 import { fetchSearch } from "./feautures/search/searchSlice";
 import { selectSearch } from "./selectors/searchSelectors";
+import { fetchSignUpUser } from "./feautures/user/userSlice";
 import { store } from "./store";
 
 export {
@@ -29,4 +31,6 @@ export {
   selectSearch,
   fetchSearch,
   searchReducer,
+  userReducer,
+  fetchSignUpUser,
 };

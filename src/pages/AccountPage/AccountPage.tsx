@@ -1,4 +1,4 @@
-import { Input } from "componets";
+import { Input, Title } from "componets";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { Content } from "ui";
 import {
@@ -6,7 +6,6 @@ import {
   AccountFormBlock,
   AccountFormGroup,
   AccountFormInner,
-  AccountFormTitle,
   ButtonGroup,
   Label,
 } from "./styles";
@@ -33,7 +32,7 @@ export const AccountPage = () => {
   return (
     <Content>
       <AccountForm onSubmit={handleSubmit(onSubmit)}>
-        <AccountFormTitle>Profile</AccountFormTitle>
+        <Title>Profile</Title>
         <AccountFormBlock>
           <AccountFormInner>
             <Label htmlFor="name">Name</Label>

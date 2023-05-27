@@ -91,4 +91,25 @@ interface MovieDetails {
   website: string;
   response: string;
 }
-export type { MovieApi, MovieResponseApi, MovieResponse, Movie, MovieDetailsApi, MovieDetails };
+
+interface AuthValue {
+  email: string;
+  password: string;
+  name: string;
+}
+enum PortalTarget {
+  ROOT = "root",
+  MODAL = "modal",
+}
+
+export type {
+  MovieApi,
+  MovieResponseApi,
+  MovieResponse,
+  Movie,
+  MovieDetailsApi,
+  MovieDetails,
+  AuthValue,
+};
+
+export { PortalTarget };

@@ -8,13 +8,7 @@ const AccountForm = styled.form`
     width: 1186px;
   }
 `;
-const AccountFormTitle = styled.h2`
-  ${typography.H2};
-  margin-bottom: 18px;
-  ${layout.media.tablet} {
-    margin-bottom: 16px;
-  }
-`;
+
 const AccountFormBlock = styled.div`
   display: grid;
   grid-gap: 20px;
@@ -22,7 +16,9 @@ const AccountFormBlock = styled.div`
   border-radius: 10px;
   padding: 24px;
   ${spaces.mb40};
+  margin-top: 18px;
   ${layout.media.tablet} {
+    margin-top: 16px;
     padding: 40px;
     grid-gap: 24px;
     grid-template-columns: repeat(2, auto);
@@ -55,12 +51,4 @@ const ButtonGroup = styled.div`
     justify-content: end;
   }
 `;
-export {
-  AccountForm,
-  AccountFormTitle,
-  AccountFormBlock,
-  AccountFormInner,
-  AccountFormGroup,
-  Label,
-  ButtonGroup,
-};
+export { AccountForm, AccountFormBlock, AccountFormInner, AccountFormGroup, Label, ButtonGroup };
