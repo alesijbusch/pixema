@@ -3,7 +3,6 @@ export enum ROUTE {
   FAVORITES = "favorites",
   ACCOUNT = "account",
   DETAILS = "details/:imdb",
-  RESET_PASWORD = "reset-pasword",
   SIGN_IN = "sign-in",
   SIGN_UP = "sign-up",
   TRENDS = "trends",
@@ -12,4 +11,5 @@ export enum ROUTE {
   DETAILS_TRENDS = "../details/:imdb",
   BACK_SIGN_UP = "../sign-up",
   BACK_SIGN_IN = "../sign-in",
+  RESET_PASSWORD = "reset-password",
 }
