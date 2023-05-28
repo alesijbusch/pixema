@@ -5,6 +5,7 @@ import {
   DetailsPage,
   FavoritesPage,
   HomePage,
+  NotFoundPage,
   ResetPasswordPage,
   SearchPage,
   SignInPage,
@@ -30,6 +31,7 @@ export const router = createBrowserRouter(
         <Route path={ROUTE.SIGN_IN} element={<SignInPage />} />
         <Route path={ROUTE.SIGN_UP} element={<SignUpPage />} />
       </Route>
+      <Route path="*" element={<NotFoundPage />} />
     </>,
   ),
 );

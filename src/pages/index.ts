@@ -7,6 +7,7 @@ import { SignInPage } from "../pages/SignInPage/SignInPage";
 import { SignUpPage } from "../pages/SignUpPage/SignUpPage";
 import { TrendsPage } from "../pages/TrendsPage/TrendsPage";
 import { SearchPage } from "./SearchPage/SearchPage";
+import { NotFoundPage } from "./NotFoundPage/NotFoundPage";
 
 export {
   FavoritesPage,
@@ -18,4 +19,5 @@ export {
   SignUpPage,
   TrendsPage,
   SearchPage,
+  NotFoundPage,
 };
