@@ -9,10 +9,9 @@ import { AuthValue } from "types";
 import { toast } from "react-toastify";
 
 interface userState {
-  name: null | string;
+  name: string | null;
   email: string | null;
   isAuth?: boolean;
-  token?: null;
   id?: null;
   loading?: boolean;
   error?: string | null;
@@ -47,19 +46,18 @@ export const fetchSignInUser = createAsyncThunk<userState, AuthValue>(
   },
 );
 
-export const fetchLogout = createAsyncThunk("auth/logout", async () => {
+export const fetchLogout = createAsyncThunk("auth/logout", () => {
   try {
-    await auth.signOut();
+    auth.signOut();
   } catch (error) {
     throw error;
   }
 });
 
 const initialState: userState = {
-  name: "",
-  email: "",
+  name: null,
+  email: null,
   isAuth: false,
-  token: null,
   id: null,
   loading: false,
   error: null,
@@ -71,7 +69,6 @@ const userSlice = createSlice({
   reducers: {
     setUser(state, { payload }) {
       state.email = payload.email;
-      state.token = payload.token;
       state.id = payload.id;
     },
   },
@@ -81,10 +78,10 @@ const userSlice = createSlice({
       state.name = payload.name;
       state.email = payload.email;
       state.isAuth = true;
-      alert("вы успешно зарегистрировались");
+      toast.success("вы успешно зарегистрировались");
     });
     builder.addCase(fetchSignUpUser.rejected, (state, { payload }) => {
-      alert("проверьте введенные данные");
+      toast.error("проверьте введенные данные");
     });
     builder.addCase(fetchSignInUser.pending, (state) => {
       state.loading = true;
@@ -95,12 +92,12 @@ const userSlice = createSlice({
       state.name = payload.name;
       state.email = payload.email;
       state.isAuth = true;
-      alert("вы успешно вошли");
+      toast.success("вы успешно вошли");
     });
     builder.addCase(fetchSignInUser.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message;
-      alert("проверьте введенные данные");
+      toast.error("проверьте введенные данные");
     });
     builder.addCase(fetchLogout.pending, (state) => {
       state.loading = true;
@@ -111,7 +108,7 @@ const userSlice = createSlice({
       state.email = null;
       state.name = null;
       state.loading = false;
-      alert("вы успешно вышли");
+      toast.success("вы успешно вышли");
     });
     builder.addCase(fetchLogout.rejected, (state, action) => {
       state.loading = false;

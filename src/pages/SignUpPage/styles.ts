@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Color, tokens, typography } from "ui";
-import { types } from "util";
+import { Color, tokens } from "ui";
 
 const { layout } = tokens;
 

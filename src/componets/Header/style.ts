@@ -79,13 +79,13 @@ const IconFilter = styled(FilterIcon)`
 `;
 const ProfileDropList = styled.ul`
   ${color.background.dark};
-  display: none;
+  opacity: 0;
   position: absolute;
   top: 55px;
   width: 100%;
   z-index: 1;
-  transition: 0.3s all ease-in-out;
   border-radius: 10px;
+  transition: 0.3s all ease-in-out;
 `;
 const StyledArrowIcon = styled(ProfileArrowIcon)`
   font-size: 13px;
@@ -93,10 +93,8 @@ const StyledArrowIcon = styled(ProfileArrowIcon)`
   transition: 0.3s all ease-in-out;
 `;
 const Profile = styled.div`
-  display: none;
   cursor: pointer;
   position: relative;
-
   ${layout.media.desktop} {
     display: flex;
     align-items: center;
@@ -106,7 +104,7 @@ const Profile = styled.div`
   }
   :hover {
     ${ProfileDropList} {
-      display: block;
+      opacity: 1;
     }
     ${StyledArrowIcon} {
       transform: rotate(0deg);
