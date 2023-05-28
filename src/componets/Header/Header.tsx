@@ -4,7 +4,6 @@ import {
   Profile,
   IconFilter,
   StyledHeader,
-  StyledLogo,
   ProfileIcon,
   ProfileNameWrap,
   StyledArrowIcon,
@@ -14,7 +13,7 @@ import {
   ProfileDropItem,
   ProfileDropLink,
 } from "./style";
-import { BurgerMenu, InputSearch } from "componets";
+import { BurgerMenu, InputSearch, Logo } from "componets";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Link, useNavigate, generatePath } from "react-router-dom";
 import { ProfileImg } from "assets";
@@ -50,9 +49,7 @@ export const Header = () => {
   return (
     <StyledHeader>
       {error && <div>{error}</div>}
-      <Link to={ROUTE.HOME}>
-        <StyledLogo />
-      </Link>
+      <Logo />
       <Profile>
         <ProfileIcon>
           <ProfileImg />

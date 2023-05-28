@@ -1,3 +1,3 @@
 import { MainTemplate } from "../templates/MainTemplate";
-
-export { MainTemplate };
+import { FormTemplate } from "./FormTemplate/FormTemplate";
+export { MainTemplate, FormTemplate };

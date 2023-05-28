@@ -14,6 +14,7 @@ import { Portal } from "./Portal/Portal";
 import { Modal } from "./Modal/Modal";
 import { Button } from "./Button/Button";
 import { Title } from "./Title/Title";
+import { Logo } from "./Logo/Logo";
 export {
   Header,
   InputSearch,
@@ -31,4 +32,5 @@ export {
   Modal,
   Button,
   Title,
+  Logo,
 };
