@@ -6,7 +6,7 @@ import { Link, Route, useNavigate } from "react-router-dom";
 import { ROUTE } from "routes";
 import { fetchSignUpUser, useAppDispatch } from "store";
 import { AuthValue } from "types";
-import { FormLink, FormText, StyledSingIn } from "./styles";
+import { FormLink, FormText, StyledSing } from "./styles";
 import { Form, FormInner, InputGroup, Label } from "ui/base";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -32,7 +32,7 @@ export const SignUpPage = () => {
   // };
 
   return (
-    <StyledSingIn>
+    <StyledSing>
       <Title>Sign Up</Title>
       <Form onSubmit={handleSubmit(onSubmitSignUp)}>
         <FormInner>
@@ -92,6 +92,6 @@ export const SignUpPage = () => {
       </FormText>
       <ToastContainer />
       {/* {isOpen && <Modal handelClose={toggleModal} />} */}
-    </StyledSingIn>
+    </StyledSing>
   );
 };

@@ -1,8 +1,8 @@
 import { Button, Input, Title } from "componets";
-import { FormLink, FormText, StyledSingIn } from "pages/SignUpPage/styles";
+import { FormLink, FormLinkText, FormText, StyledSing } from "pages/SignUpPage/styles";
 import React from "react";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { ROUTE } from "routes";
 import { fetchSignInUser, useAppDispatch } from "store";
@@ -24,7 +24,7 @@ export const SignInPage = () => {
     // .then(() => toggleModal());
   };
   return (
-    <StyledSingIn>
+    <StyledSing>
       <Title>Sign In</Title>
       {/* <Form onSubmit={onSubmit} /> */}
       <Form onSubmit={handleSubmit(onSubmitSignIn)}>
@@ -53,13 +53,13 @@ export const SignInPage = () => {
               defaultValue=""
             />
           </InputGroup>
-          <FormLink to={ROUTE.HOME + "/" + ROUTE.RESET_PASSWORD}>Forgot password?</FormLink>
+          <FormLinkText to={ROUTE.HOME + "/" + ROUTE.RESET_PASSWORD}>Forgot password?</FormLinkText>
         </FormInner>
-        <Button>Save</Button>
+        <Button>Sign in</Button>
       </Form>
       <FormText>
         Already have an account? <FormLink to={ROUTE.BACK_SIGN_UP}>Sign Up</FormLink>
       </FormText>
-    </StyledSingIn>
+    </StyledSing>
   );
 };

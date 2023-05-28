@@ -1,6 +1,6 @@
 import { Button, Input, Title } from "componets";
 import { sendPasswordResetEmail } from "firebase/auth";
-import { StyledSingIn } from "pages/SignUpPage/styles";
+import { StyledSing } from "pages/SignUpPage/styles";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { auth } from "services";
@@ -24,7 +24,7 @@ export const ResetPasswordPage = () => {
   };
 
   return (
-    <StyledSingIn>
+    <StyledSing>
       <Title>Reset password</Title>
       <Form onSubmit={handleSubmit(onSubmitReset)}>
         <FormInner>
@@ -43,6 +43,6 @@ export const ResetPasswordPage = () => {
         </FormInner>
         <Button>Reset</Button>
       </Form>
-    </StyledSingIn>
+    </StyledSing>
   );
 };

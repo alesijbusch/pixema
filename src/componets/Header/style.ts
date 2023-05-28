@@ -23,17 +23,6 @@ const StyledHeader = styled.div`
 //   margin: 5px;
 // `;
 
-const StyledLogo = styled(Logo)`
-  width: 152px;
-  ${layout.media.smallTablet} {
-    width: 162px;
-    margin-right: 78px;
-  }
-  ${layout.media.desktop} {
-    width: 158px;
-    margin-right: 146px;
-  }
-`;
 const Hamburger = styled.div`
   padding: 21px 20px;
   border-radius: 10px;
@@ -162,7 +151,6 @@ const ProfileDropItem = styled.li`
 const SearchForm = styled.form``;
 export {
   StyledHeader,
-  StyledLogo,
   Hamburger,
   HamburgerLine,
   InputWrapper,

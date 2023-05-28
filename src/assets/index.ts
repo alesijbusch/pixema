@@ -11,6 +11,7 @@ import { ReactComponent as BurgerOpenIcon } from "./icons/burger-open.svg";
 import { ReactComponent as BurgerCloseIcon } from "./icons/burger-close.svg";
 import ArrowPrevIcon from "./icons/arrow-prev.svg";
 import ArrowNextIcon from "./icons/arrow-next.svg";
+import AuthImg from "./images/auth.png";
 
 export {
   Logo,
@@ -26,4 +27,5 @@ export {
   ArrowNextIcon,
   BurgerOpenIcon,
   BurgerCloseIcon,
+  AuthImg,
 };
