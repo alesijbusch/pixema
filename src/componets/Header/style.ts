@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { spaces, tokens, typography } from "ui";
 import { Logo, FilterIcon, ProfileArrowIcon } from "assets";
+import { Link } from "react-router-dom";
+import { Color } from "ui";
 
 const { color, layout } = tokens;
 
@@ -64,6 +66,7 @@ const InputWrapper = styled.div`
   justify-content: space-between; */
   margin-top: 32px;
   width: 100%;
+  transition: 0.3s all ease-in-out;
   ${layout.media.smallTablet} {
     margin-top: 0;
     margin: 0px 32px 0 0;
@@ -85,15 +88,40 @@ const IconFilter = styled(FilterIcon)`
   cursor: pointer;
   //display: inline-block;
 `;
+const ProfileDropList = styled.ul`
+  ${color.background.dark};
+  display: none;
+  position: absolute;
+  top: 55px;
+  width: 100%;
+  z-index: 1;
+  transition: 0.3s all ease-in-out;
+  border-radius: 10px;
+`;
+const StyledArrowIcon = styled(ProfileArrowIcon)`
+  font-size: 13px;
+  transform: rotate(-90deg);
+  transition: 0.3s all ease-in-out;
+`;
 const Profile = styled.div`
   display: none;
   cursor: pointer;
+  position: relative;
+
   ${layout.media.desktop} {
     display: flex;
     align-items: center;
     width: 264px;
     order: 3;
     padding-right: 20px;
+  }
+  :hover {
+    ${ProfileDropList} {
+      display: block;
+    }
+    ${StyledArrowIcon} {
+      transform: rotate(0deg);
+    }
   }
 `;
 const ProfileIcon = styled.div`
@@ -111,13 +139,27 @@ const ProfileNameWrap = styled.div`
 const ProfileName = styled.span`
   ${typography.S3};
 `;
-const StyledArrowIcon = styled(ProfileArrowIcon)`
-  font-size: 13px;
-  transform: rotate(-90deg);
+const ProfileDropLink = styled(Link)`
+  ${color.text.white};
+  text-decoration: none;
+  transition: 0.3s all ease-in-out;
+`;
+const ProfileDropItem = styled.li`
+  padding: 17px 20px;
+  border-bottom: 1px solid ${Color.graphite};
+  ${color.text.primaryLight};
+  ${typography.B1};
+  :last-child {
+    border-bottom: 0;
+  }
+  :hover {
+    ${ProfileDropLink} {
+      ${color.text.primaryLight};
+    }
+  }
 `;
 
 const SearchForm = styled.form``;
-
 export {
   StyledHeader,
   StyledLogo,
@@ -131,4 +173,7 @@ export {
   StyledArrowIcon,
   ProfileName,
   SearchForm,
+  ProfileDropList,
+  ProfileDropItem,
+  ProfileDropLink,
 };

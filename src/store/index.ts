@@ -8,11 +8,14 @@ import { fetchMovies } from "./feautures/movies/moviesSlice";
 import { selectMovies } from "./selectors/moviesSelectors";
 import { fetchMovieDetails } from "./feautures/movieDetails/movieDetailsSlice";
 import { selectMovieDetails } from "./selectors/movieDetailsSelectors";
+import { selectUser } from "./selectors/userSelectors";
 import { fetchTrends } from "./feautures/trends/trendsSlice";
 import { selectTrends } from "./selectors/trendsSelectors";
 import { fetchSearch } from "./feautures/search/searchSlice";
 import { selectSearch } from "./selectors/searchSelectors";
 import { fetchSignUpUser } from "./feautures/user/userSlice";
+import { fetchSignInUser } from "./feautures/user/userSlice";
+import { fetchLogout } from "./feautures/user/userSlice";
 import { store } from "./store";
 
 export {
@@ -32,5 +35,8 @@ export {
   fetchSearch,
   searchReducer,
   userReducer,
+  selectUser,
   fetchSignUpUser,
+  fetchSignInUser,
+  fetchLogout,
 };

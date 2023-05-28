@@ -1,12 +1,26 @@
-import React from "react";
-import { NavigationLink, StyledNavigation } from "./styles";
+import { NavigationLink, NavigationText, StyledNavigation } from "./styles";
 import { ROUTE } from "routes";
 import { FavoritesIcon, HomeIcon, SettingsIcon, TrendsIcon } from "assets";
+import { useWindowSize } from "hooks";
+import { fetchLogout, selectUser, useAppDispatch, useAppSelector } from "store";
+import { useNavigate } from "react-router-dom";
 
 interface NavigationProps {
   handleClose?: () => void;
 }
 export const Navigation = ({ handleClose }: NavigationProps) => {
+  const { name, loading, error, isAuth } = useAppSelector(selectUser);
+  const { width = 0 } = useWindowSize();
+  const isMobile = width < 1440;
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(fetchLogout()).then(() => {
+      navigate(ROUTE.HOME);
+    });
+  };
+
   return (
     <StyledNavigation>
       <NavigationLink to={ROUTE.HOME} onClick={handleClose}>
@@ -17,22 +31,30 @@ export const Navigation = ({ handleClose }: NavigationProps) => {
         <TrendsIcon />
         Trends
       </NavigationLink>
-      <NavigationLink to={ROUTE.FAVORITES} onClick={handleClose}>
-        <FavoritesIcon />
-        Favorites
-      </NavigationLink>
-      <NavigationLink to={ROUTE.ACCOUNT} onClick={handleClose}>
-        <SettingsIcon />
-        Settings
-      </NavigationLink>
-      <NavigationLink to={ROUTE.SIGN_UP} onClick={handleClose}>
-        <SettingsIcon />
-        SIGN_UP
-      </NavigationLink>
-      <NavigationLink to={ROUTE.SIGN_IN} onClick={handleClose}>
-        <SettingsIcon />
-        SIGN_IN
-      </NavigationLink>
+      {isAuth && (
+        <>
+          <NavigationLink to={ROUTE.FAVORITES} onClick={handleClose}>
+            <FavoritesIcon />
+            Favorites
+          </NavigationLink>
+          <NavigationLink to={ROUTE.ACCOUNT} onClick={handleClose}>
+            <SettingsIcon />
+            Settings
+          </NavigationLink>
+        </>
+      )}
+      {isMobile &&
+        (isAuth ? (
+          <NavigationText onClick={handleLogout}>
+            <SettingsIcon />
+            Log Out
+          </NavigationText>
+        ) : (
+          <NavigationLink to={ROUTE.SIGN_IN} onClick={handleClose}>
+            <SettingsIcon />
+            Sign In
+          </NavigationLink>
+        ))}
     </StyledNavigation>
   );
 };

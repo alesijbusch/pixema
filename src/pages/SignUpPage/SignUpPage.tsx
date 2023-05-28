@@ -8,29 +8,33 @@ import { fetchSignUpUser, useAppDispatch } from "store";
 import { AuthValue } from "types";
 import { FormLink, FormText, StyledSingIn } from "./styles";
 import { Form, FormInner, InputGroup, Label } from "ui/base";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const SignUpPage = () => {
   const { reset, control, handleSubmit } = useForm<AuthValue>();
-  const [isOpen, setIsOpen] = useState(false);
+  //const [isOpen, setIsOpen] = useState(false);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<AuthValue> = (data) => {
+  const onSubmitSignUp: SubmitHandler<AuthValue> = (data) => {
     dispatch(fetchSignUpUser(data))
       .unwrap()
-      .then(() => toggleModal());
-    reset();
+      .then(() => {
+        // toast.success("user is logged");
+        navigate(ROUTE.HOME);
+      });
+    // .then(() => toggleModal());
   };
-  const toggleModal = () => {
-    setIsOpen((prev) => !prev);
-    //navigate(ROUTE.HOME);
-  };
+  // const toggleModal = () => {
+  //   setIsOpen((prev) => !prev);
+  //   //navigate(ROUTE.HOME);
+  // };
 
   return (
     <StyledSingIn>
       <Title>Sign Up</Title>
-      {/* <Form onSubmit={onSubmit} /> */}
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmitSignUp)}>
         <FormInner>
           <InputGroup>
             <Label htmlFor="name">Name</Label>
@@ -68,14 +72,26 @@ export const SignUpPage = () => {
               defaultValue=""
             />
           </InputGroup>
+          {/* <InputGroup>
+            <Label htmlFor="name">Confirm password</Label>
+            <Controller
+              control={control}
+              // rules={getValidateRule("text")}
+              render={({ field }) => (
+                <Input {...field} placeholder="Confirm  password" type="password" id="cPassword" />
+              )}
+              name="cPassword"
+              defaultValue=""
+            />
+          </InputGroup> */}
         </FormInner>
         <Button>Save</Button>
       </Form>
       <FormText>
         Already have an account? <FormLink to={ROUTE.BACK_SIGN_IN}>Sign In</FormLink>
       </FormText>
-
-      {isOpen && <Modal handelClose={toggleModal} />}
+      <ToastContainer />
+      {/* {isOpen && <Modal handelClose={toggleModal} />} */}
     </StyledSingIn>
   );
 };

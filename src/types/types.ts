@@ -95,7 +95,8 @@ interface MovieDetails {
 interface AuthValue {
   email: string;
   password: string;
-  name: string;
+  cPassword?: string;
+  name?: string;
 }
 enum PortalTarget {
   ROOT = "root",

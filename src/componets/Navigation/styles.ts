@@ -27,5 +27,5 @@ const NavigationLink = styled(Link)`
     margin-right: 20px;
   }
 `;
-
-export { StyledNavigation, NavigationLink };
+const NavigationText = styled.div``;
+export { StyledNavigation, NavigationLink, NavigationText };

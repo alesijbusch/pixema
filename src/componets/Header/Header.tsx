@@ -10,18 +10,25 @@ import {
   StyledArrowIcon,
   ProfileName,
   SearchForm,
+  ProfileDropList,
+  ProfileDropItem,
+  ProfileDropLink,
 } from "./style";
 import { BurgerMenu, InputSearch } from "componets";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Link, useNavigate, generatePath } from "react-router-dom";
 import { ProfileImg } from "assets";
 import { useDebounce, useToggle, useWindowSize } from "hooks";
+import { fetchLogout, selectUser, useAppDispatch, useAppSelector } from "store";
 
 export const Header = () => {
   const [search, setSearch] = useState<string>("");
   const [isMenuOpen, toggleMenu] = useToggle();
   const { width = 0 } = useWindowSize();
   const isMobile = width < 1440;
+  const dispatch = useAppDispatch();
+
+  const { name, loading, error, isAuth } = useAppSelector(selectUser);
 
   const navigate = useNavigate();
   const debaunceSearch = useDebounce(search);
@@ -36,8 +43,13 @@ export const Header = () => {
     debaunceSearch && navigate(generatePath(ROUTE.SEARCH, { title: debaunceSearch }));
   }, [debaunceSearch]);
 
+  const handleLogout = () => {
+    dispatch(fetchLogout());
+  };
+
   return (
     <StyledHeader>
+      {error && <div>{error}</div>}
       <Link to={ROUTE.HOME}>
         <StyledLogo />
       </Link>
@@ -46,9 +58,24 @@ export const Header = () => {
           <ProfileImg />
         </ProfileIcon>
         <ProfileNameWrap>
-          <ProfileName>Sign In</ProfileName>
+          {isAuth ? <ProfileName>{name}</ProfileName> : <ProfileName>Sign In</ProfileName>}
           <StyledArrowIcon />
         </ProfileNameWrap>
+        <ProfileDropList>
+          {isAuth && (
+            <ProfileDropItem>
+              <ProfileDropLink to={ROUTE.ACCOUNT}>Edit profile</ProfileDropLink>
+            </ProfileDropItem>
+          )}
+
+          {isAuth ? (
+            <ProfileDropItem onClick={handleLogout}>Log Out</ProfileDropItem>
+          ) : (
+            <ProfileDropItem>
+              <ProfileDropLink to={ROUTE.SIGN_IN}>Log In</ProfileDropLink>
+            </ProfileDropItem>
+          )}
+        </ProfileDropList>
       </Profile>
       {isMobile && <BurgerMenu isMobile={isMobile} handleClose={toggleMenu} isOpen={isMenuOpen} />}
       <InputWrapper>
