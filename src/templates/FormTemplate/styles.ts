@@ -5,7 +5,6 @@ const { color, layout } = tokens;
 
 const StyledFormTemplate = styled.div`
   background: url(${AuthImg}) center center / cover no-repeat;
-  background-color: #000;
   height: 100vh;
   position: relative;
   display: flex;

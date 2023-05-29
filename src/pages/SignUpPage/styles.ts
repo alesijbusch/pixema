@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color, tokens } from "ui";
 
-const { layout } = tokens;
+const { layout, color } = tokens;
 
 const StyledSing = styled.div`
   width: 272px;
-  background: #242426;
+  ${color.themeBackground.wrapBg};
   border-radius: 10px;
   padding: 25px;
 

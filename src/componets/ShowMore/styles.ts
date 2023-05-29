@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { Color, tokens } from "ui";
 
-const { layout } = tokens;
+const { layout, color } = tokens;
 
 const StyledMoreProps = styled.button`
   align-self: center;
   border-radius: 40px;
   border: none;
   padding: 15px 60px 15px;
-  background-color: ${Color.graphite};
+  ${color.themeBackground.blockBg};
   color: ${Color.white};
   transition: 0.3s all ease-in-out;
   cursor: pointer;

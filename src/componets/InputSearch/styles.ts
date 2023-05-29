@@ -10,11 +10,11 @@ const StyledInputSearch = styled.input`
   border-radius: 10px;
   outline: none;
   font-weight: 500px;
-  outline: 2px solid ${Color.graphite};
+  outline: 2px solid ${color.themeOutline.outlineBg};
   ${size.font.fs16};
   ${size.fontWeight.medium};
   ${size.lineHeight.lh24};
-  ${color.text.white};
+  ${color.themeText.primaryText};
   ${color.themeBackground.inputBg};
 
   ::placeholder {

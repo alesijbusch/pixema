@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { BurgerCloseIcon } from "assets";
-
 import { Color, tokens } from "ui";
 
 const { color, layout } = tokens;
@@ -25,7 +24,7 @@ const BurgerNav = styled(motion.div)`
   display: flex;
   flex-flow: column;
   height: 100%;
-  ${color.background.black};
+  ${color.themeBackground.secondaryBg};
   overflow-y: auto;
   right: 0;
   transition: 0.4s all ease-in-out;

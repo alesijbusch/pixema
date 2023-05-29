@@ -6,6 +6,7 @@ import {
   trendsReducer,
   userReducer,
   favoritesReducer,
+  themeReducer,
 } from "store";
 
 export const store = configureStore({
@@ -16,6 +17,7 @@ export const store = configureStore({
     search: searchReducer,
     user: userReducer,
     favorites: favoritesReducer,
+    theme: themeReducer,
   },
 });
 

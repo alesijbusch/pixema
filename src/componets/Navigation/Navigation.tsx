@@ -9,7 +9,7 @@ interface NavigationProps {
   handleClose?: () => void;
 }
 export const Navigation = ({ handleClose }: NavigationProps) => {
-  const { name, loading, error, isAuth } = useAppSelector(selectUser);
+  const { isAuth } = useAppSelector(selectUser);
   const { width = 0 } = useWindowSize();
   const isMobile = width < 1440;
   const dispatch = useAppDispatch();
@@ -45,13 +45,9 @@ export const Navigation = ({ handleClose }: NavigationProps) => {
       )}
       {isMobile &&
         (isAuth ? (
-          <NavigationText onClick={handleLogout}>
-            <SettingsIcon />
-            Log Out
-          </NavigationText>
+          <NavigationText onClick={handleLogout}>Log Out</NavigationText>
         ) : (
           <NavigationLink to={ROUTE.SIGN_IN} onClick={handleClose}>
-            <SettingsIcon />
             Sign In
           </NavigationLink>
         ))}

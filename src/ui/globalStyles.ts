@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { Color, lightTheme, darkTheme, reset, tokens } from "ui";
+import { lightTheme, darkTheme, reset, tokens } from "ui";
 const { color } = tokens;
 
 export const GlobalStyles = createGlobalStyle`
@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Exo 2', sans-serif;
     font-style: normal;
-    ${color.text.white};
+    ${color.themeText.primaryText};
     ${color.themeBackground.primaryBg};
   }
   html[theme='light']{

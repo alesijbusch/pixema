@@ -40,7 +40,7 @@ export const Header = () => {
   };
   useEffect(() => {
     debaunceSearch && navigate(generatePath(ROUTE.SEARCH, { title: debaunceSearch }));
-  }, [debaunceSearch]);
+  }, [debaunceSearch, navigate]);
 
   const handleLogout = () => {
     dispatch(fetchLogout());

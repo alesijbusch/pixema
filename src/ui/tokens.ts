@@ -10,6 +10,7 @@ interface TokenColor {
   background: TokenColorBackground;
   themeText: TokenColorThemeText;
   themeBackground: TokenColorThemeBackground;
+  themeOutline: TokenColorThemeOutline;
 }
 interface TokenColorText {
   primary: string;
@@ -33,10 +34,19 @@ interface TokenColorBackground {
 }
 interface TokenColorThemeText {
   primaryText: string;
+  secondaryText: string;
 }
 interface TokenColorThemeBackground {
   primaryBg: string;
   inputBg: string;
+  blockBg: string;
+  fill_bg: string;
+  secondaryBg: string;
+  wrapBg: string;
+  logo_bg: string;
+}
+interface TokenColorThemeOutline {
+  outlineBg: string;
 }
 interface TokenLayout {
   media: TokenLayoutMedia;
@@ -117,10 +127,19 @@ const tokens: Token = {
     },
     themeText: {
       primaryText: `color: ${Color.primary_text}`,
+      secondaryText: `color: ${Color.secondary_text}`,
     },
     themeBackground: {
       primaryBg: `background: ${Color.primary_bg}`,
       inputBg: `background: ${Color.input_bg}`,
+      secondaryBg: `background: ${Color.secondary_bg}`,
+      blockBg: `background: ${Color.block_bg}`,
+      fill_bg: `${Color.fill_bg}`,
+      logo_bg: `${Color.logo_bg}`,
+      wrapBg: `background: ${Color.wrap_bg}`,
+    },
+    themeOutline: {
+      outlineBg: `${Color.outline_bg}`,
     },
   },
 

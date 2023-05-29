@@ -5,6 +5,7 @@ import trendsReducer from "./feautures/trends/trendsSlice";
 import searchReducer from "./feautures/search/searchSlice";
 import userReducer from "./feautures/user/userSlice";
 import favoritesReducer from "./feautures/favorites/favoritesSlice";
+import themeReducer from "./feautures/theme/themeSlice";
 import { fetchMovies } from "./feautures/movies/moviesSlice";
 import { selectMovies } from "./selectors/moviesSelectors";
 import { fetchMovieDetails } from "./feautures/movieDetails/movieDetailsSlice";
@@ -21,6 +22,8 @@ import { selectFavorites } from "./selectors/favoritesSelectors";
 import { favoritesSlice } from "./feautures/favorites/favoritesSlice";
 import { addFavorites } from "./feautures/favorites/favoritesSlice";
 import { removeFavorites } from "./feautures/favorites/favoritesSlice";
+import { selectTheme } from "./selectors/themeSelectors";
+import { setThemeMode } from "./feautures/theme/themeSlice";
 
 import { store } from "./store";
 
@@ -50,4 +53,7 @@ export {
   favoritesSlice,
   addFavorites,
   removeFavorites,
+  themeReducer,
+  selectTheme,
+  setThemeMode,
 };

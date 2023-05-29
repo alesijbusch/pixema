@@ -41,6 +41,7 @@ const StickerReating = styled.div`
   border-radius: 6px;
   padding: 2px 7px;
   margin-right: 20px;
+  ${color.text.white};
   ${color.background.green};
   ${typography.S3}
 `;
@@ -48,7 +49,8 @@ const StickerDefault = styled.div`
   border-radius: 6px;
   padding: 2px 7px;
   margin-right: 20px;
-  ${color.background.graphite};
+  ${color.themeBackground.blockBg};
+  ${color.text.white};
   ${typography.S3}
 `;
 const StyledImdbIcon = styled(ImdbIcon)`
@@ -85,7 +87,12 @@ const StyledFavorites = styled.div`
   border-radius: 10px;
   display: inline-block;
   cursor: pointer;
-  ${color.background.graphite};
+  ${color.themeBackground.blockBg};
+  svg {
+    path {
+      fill: ${color.themeBackground.fill_bg};
+    }
+  }
   :hover {
     svg {
       path {
@@ -93,12 +100,11 @@ const StyledFavorites = styled.div`
       }
     }
   }
-
   ${layout.media.tablet} {
     padding: 19px 45px;
   }
 `;
-const FavoriteRemove = styled.div``;
+
 const Plot = styled.p`
   ${typography.B1};
   ${spaces.mb40};
@@ -134,7 +140,7 @@ const TdCellName = styled.td`
 const TdCellValue = styled.td`
   flex-basis: auto;
   ${typography.B1};
-  ${color.text.white};
+  ${color.themeText.secondaryText};
 `;
 const SliderWrapper = styled.div`
   ${layout.media.tablet} {
@@ -167,5 +173,4 @@ export {
   Details,
   SliderWrapper,
   DetailsPageTitle,
-  FavoriteRemove,
 };

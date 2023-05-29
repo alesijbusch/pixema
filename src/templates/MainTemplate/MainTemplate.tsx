@@ -1,20 +1,18 @@
 import { Header, Sidebar } from "componets";
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { Container, Wrapper } from "./styles";
+import { selectTheme, useAppSelector } from "store";
 
 export const MainTemplate = () => {
-  const [theme, setTheme] = useState("dark");
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
-  };
+  const { modeTheme } = useAppSelector(selectTheme);
+
   useEffect(() => {
-    document.documentElement.setAttribute("theme", theme);
-  }, [theme]);
+    document.documentElement.setAttribute("theme", modeTheme);
+  }, [modeTheme]);
 
   return (
     <Wrapper>
-      <button onClick={toggleTheme}>theme</button>
       <Header />
       <Container>
         <Sidebar />

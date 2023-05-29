@@ -78,7 +78,7 @@ const IconFilter = styled(FilterIcon)`
   //display: inline-block;
 `;
 const ProfileDropList = styled.ul`
-  ${color.background.dark};
+  ${color.themeBackground.blockBg};
   opacity: 0;
   position: absolute;
   top: 55px;

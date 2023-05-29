@@ -24,6 +24,7 @@ const Content = styled.div`
 `;
 
 const Form = styled.form``;
+
 const Label = styled.label`
   display: block;
   margin-bottom: 10px;

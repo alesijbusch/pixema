@@ -1,7 +1,7 @@
 import { Logo } from "assets";
 import styled from "styled-components";
 import { tokens } from "ui";
-const { layout } = tokens;
+const { layout, color } = tokens;
 
 const StyledLogo = styled(Logo)`
   width: 152px;
@@ -12,6 +12,18 @@ const StyledLogo = styled(Logo)`
   ${layout.media.desktop} {
     width: 158px;
     margin-right: 146px;
+  }
+
+  path {
+    :nth-child(4) {
+      fill: ${color.themeBackground.logo_bg};
+    }
+    :nth-child(5) {
+      fill: ${color.themeBackground.logo_bg};
+    }
+    :nth-child(6) {
+      fill: ${color.themeBackground.logo_bg};
+    }
   }
 `;
 

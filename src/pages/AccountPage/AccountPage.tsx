@@ -8,8 +8,16 @@ import {
   AccountFormInner,
   ButtonGroup,
   Label,
+  Switch,
+  SwitchRound,
+  SwitchInput,
+  SwitchContainer,
+  SwitchName,
+  SwitchText,
+  SwitchInner,
 } from "./styles";
 import { Button } from "componets/Button/Button";
+import { setThemeMode, useAppDispatch } from "store";
 
 interface Profile {
   name: string;
@@ -20,6 +28,11 @@ interface Profile {
 }
 
 export const AccountPage = () => {
+  const dispatch = useAppDispatch();
+
+  const toggleTheme = () => {
+    dispatch(setThemeMode());
+  };
   const {
     handleSubmit,
     control,
@@ -29,6 +42,7 @@ export const AccountPage = () => {
   const onSubmit: SubmitHandler<Profile> = (data) => {
     reset();
   };
+
   return (
     <Content>
       <AccountForm onSubmit={handleSubmit(onSubmit)}>
@@ -59,7 +73,7 @@ export const AccountPage = () => {
             />
           </AccountFormInner>
         </AccountFormBlock>
-
+        <Title>Password</Title>
         <AccountFormBlock>
           <AccountFormInner>
             <Label htmlFor="password">Password</Label>
@@ -105,6 +119,18 @@ export const AccountPage = () => {
             </AccountFormInner>
           </AccountFormGroup>
         </AccountFormBlock>
+        <Title>Color mode</Title>
+
+        <SwitchContainer>
+          <SwitchInner>
+            <SwitchName>Dark</SwitchName>
+            <SwitchText>Use dark thema</SwitchText>
+          </SwitchInner>
+          <Switch className="switch">
+            <SwitchInput type="checkbox" onClick={toggleTheme} />
+            <SwitchRound></SwitchRound>
+          </Switch>
+        </SwitchContainer>
         <ButtonGroup>
           <Button>Save</Button>
           <Button>Cancel</Button>

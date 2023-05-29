@@ -43,20 +43,20 @@ const FavoriteRemove = styled.div`
   top: 20px;
   right: 20px;
   padding: 5px 13px;
-  ${color.background.graphite};
+  ${color.background.primary};
   border-radius: 6px;
   cursor: pointer;
   :hover {
     svg {
       path {
-        fill: ${Color.white};
+        fill: ${Color.primaryLight};
       }
     }
   }
   svg {
     path {
       transition: 0.3s all ease-in-out;
-      fill: ${Color.primary};
+      fill: ${Color.white};
     }
   }
 `;

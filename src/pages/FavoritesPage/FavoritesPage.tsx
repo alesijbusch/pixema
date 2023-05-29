@@ -1,10 +1,8 @@
 import { CardList } from "componets";
 import { ROUTE } from "routes";
-import { removeFavorites, selectFavorites, useAppSelector } from "store";
+import { selectFavorites, useAppSelector } from "store";
 import { Content } from "ui";
 import { EmptyFavorites, EmptyInner } from "./styles";
-import { Movie } from "types";
-import { useDispatch } from "react-redux";
 
 export const FavoritesPage = () => {
   const { favorites } = useAppSelector(selectFavorites);
