@@ -9,9 +9,11 @@ import { ReactComponent as HomeIcon } from "./icons/home.svg";
 import { ReactComponent as SettingsIcon } from "./icons/settings.svg";
 import { ReactComponent as BurgerOpenIcon } from "./icons/burger-open.svg";
 import { ReactComponent as BurgerCloseIcon } from "./icons/burger-close.svg";
+import { ReactComponent as EmptyFavoritesIcon } from "./images/empty-favorites.svg";
 import ArrowPrevIcon from "./icons/arrow-prev.svg";
 import ArrowNextIcon from "./icons/arrow-next.svg";
 import AuthImg from "./images/auth.png";
+import EmptyFavoritesImg from "./images/empty-favorites.png";
 
 export {
   Logo,
@@ -28,4 +30,6 @@ export {
   BurgerOpenIcon,
   BurgerCloseIcon,
   AuthImg,
+  EmptyFavoritesImg,
+  EmptyFavoritesIcon,
 };

@@ -15,7 +15,7 @@ import {
 } from "./style";
 import { BurgerMenu, InputSearch, Logo } from "componets";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import { Link, useNavigate, generatePath } from "react-router-dom";
+import { useNavigate, generatePath } from "react-router-dom";
 import { ProfileImg } from "assets";
 import { useDebounce, useToggle, useWindowSize } from "hooks";
 import { fetchLogout, selectUser, useAppDispatch, useAppSelector } from "store";
@@ -27,7 +27,7 @@ export const Header = () => {
   const isMobile = width < 1440;
   const dispatch = useAppDispatch();
 
-  const { name, loading, error, isAuth } = useAppSelector(selectUser);
+  const { name, error, isAuth } = useAppSelector(selectUser);
 
   const navigate = useNavigate();
   const debaunceSearch = useDebounce(search);

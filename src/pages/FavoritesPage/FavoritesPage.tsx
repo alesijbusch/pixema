@@ -1,12 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { CardList } from "componets";
 import { ROUTE } from "routes";
+import { removeFavorites, selectFavorites, useAppSelector } from "store";
+import { Content } from "ui";
+import { EmptyFavorites, EmptyInner } from "./styles";
+import { Movie } from "types";
+import { useDispatch } from "react-redux";
 
 export const FavoritesPage = () => {
+  const { favorites } = useAppSelector(selectFavorites);
+
   return (
-    <div>
-      <h1>Favorites</h1>
-      <Link to={ROUTE.HOME}>go to home</Link>
-    </div>
+    <Content>
+      {favorites.length === 0 && (
+        <EmptyInner>
+          <EmptyFavorites />
+        </EmptyInner>
+      )}
+      {favorites.length > 0 && (
+        <CardList isFavorite movies={favorites} link={ROUTE.RECOMMENDATIONS} />
+      )}
+    </Content>
   );
 };

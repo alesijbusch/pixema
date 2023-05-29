@@ -98,6 +98,7 @@ const StyledFavorites = styled.div`
     padding: 19px 45px;
   }
 `;
+const FavoriteRemove = styled.div``;
 const Plot = styled.p`
   ${typography.B1};
   ${spaces.mb40};
@@ -166,4 +167,5 @@ export {
   Details,
   SliderWrapper,
   DetailsPageTitle,
+  FavoriteRemove,
 };

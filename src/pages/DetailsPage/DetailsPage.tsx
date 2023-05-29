@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Content } from "ui";
 import {
   Details,
@@ -21,18 +21,28 @@ import {
   TdCellValue,
   Tr,
 } from "./styles";
-import { fetchMovieDetails, selectMovieDetails, useAppDispatch, useAppSelector } from "store";
+import {
+  addFavorites,
+  fetchMovieDetails,
+  selectMovieDetails,
+  selectUser,
+  useAppDispatch,
+  useAppSelector,
+} from "store";
 import { Slider, Spinner } from "componets";
 import { FavoritesIcon } from "assets";
 
 import { Movie } from "types";
 import { transformMovieApi } from "mappers";
+import { ROUTE } from "routes";
 
 export const DetailsPage = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const { imdb } = useParams();
   const { isLoading, movieDetails, error } = useAppSelector(selectMovieDetails);
+  const { isAuth } = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchMovieDetails(imdb));
@@ -80,6 +90,14 @@ export const DetailsPage = () => {
       });
   }, [imdb]);
 
+  const addFavoriteHandler = (item: Movie) => {
+    if (isAuth) {
+      dispatch(addFavorites(item));
+    } else {
+      navigate(ROUTE.BACK_SIGN_IN);
+    }
+  };
+
   return (
     <Content>
       {isLoading && <Spinner />}
@@ -99,8 +117,8 @@ export const DetailsPage = () => {
             <StickerDefault>{movieDetails.runtime}</StickerDefault>
           </StickersGroup>
           <DetailsPosterGroup>
-            <DetailsPoster src={movieDetails.poster} alt="" />
-            <StyledFavorites>
+            <DetailsPoster src={movieDetails.poster} />
+            <StyledFavorites onClick={() => addFavoriteHandler(movieDetails)}>
               <FavoritesIcon />
             </StyledFavorites>
           </DetailsPosterGroup>

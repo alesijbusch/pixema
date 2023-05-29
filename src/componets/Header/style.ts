@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { spaces, tokens, typography } from "ui";
-import { Logo, FilterIcon, ProfileArrowIcon } from "assets";
+import { FilterIcon, ProfileArrowIcon } from "assets";
 import { Link } from "react-router-dom";
 import { Color } from "ui";
 
@@ -93,6 +93,7 @@ const StyledArrowIcon = styled(ProfileArrowIcon)`
   transition: 0.3s all ease-in-out;
 `;
 const Profile = styled.div`
+  display: none;
   cursor: pointer;
   position: relative;
   ${layout.media.desktop} {

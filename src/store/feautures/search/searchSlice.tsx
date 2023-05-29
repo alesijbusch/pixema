@@ -11,21 +11,20 @@ interface searchState {
 
 const movieKey = "73417f5e";
 
-export const fetchSearch = createAsyncThunk<
-  MovieResponse,
-  string | undefined,
-  { rejectValue: string }
->("search/fetchSearch", async (options, { rejectWithValue }) => {
-  try {
-    const { data } = await axios.get<MovieResponseApi>(
-      `https://www.omdbapi.com/?apikey=${movieKey}&s=${options}`,
-    );
-    return transformMovieApi(data);
-  } catch (error) {
-    const { message } = error as AxiosError;
-    return rejectWithValue(message);
-  }
-});
+export const fetchSearch = createAsyncThunk<MovieResponse, string, { rejectValue: string }>(
+  "search/fetchSearch",
+  async (options, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get<MovieResponseApi>(
+        `https://www.omdbapi.com/?apikey=${movieKey}&s=${options}`,
+      );
+      return transformMovieApi(data);
+    } catch (error) {
+      const { message } = error as AxiosError;
+      return rejectWithValue(message);
+    }
+  },
+);
 
 const initialState: searchState = {
   search: [],
@@ -41,15 +40,18 @@ const searchSlice = createSlice({
     builder.addCase(fetchSearch.pending, (state) => {
       state.isLoading = true;
       state.error = null;
+      state.search = [];
     });
     builder.addCase(fetchSearch.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.search.push(...payload.search);
+      state.error = null;
+      state.search = payload.search;
     });
     builder.addCase(fetchSearch.rejected, (state, { payload }) => {
       if (payload) {
         state.isLoading = false;
         state.error = payload;
+        state.search = [];
       }
     });
   },

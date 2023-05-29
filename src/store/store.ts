@@ -5,6 +5,7 @@ import {
   searchReducer,
   trendsReducer,
   userReducer,
+  favoritesReducer,
 } from "store";
 
 export const store = configureStore({
@@ -14,6 +15,7 @@ export const store = configureStore({
     trends: trendsReducer,
     search: searchReducer,
     user: userReducer,
+    favorites: favoritesReducer,
   },
 });
 
