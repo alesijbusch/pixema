@@ -1,7 +1,7 @@
 import { CardList, ShowMore, Spinner } from "componets";
-import { useToggle } from "hooks";
-import React, { useEffect, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { ROUTE } from "routes";
 import { fetchSearch, selectSearch, useAppDispatch, useAppSelector } from "store";
 import { Content } from "ui";
@@ -12,9 +12,6 @@ export const SearchPage = () => {
   const dispatch = useAppDispatch();
   const [page, setPage] = useState<number>(1);
   const handlePage = () => setPage((prevPage) => ++prevPage);
-  const [filter, toogleFilter] = useToggle();
-
-  //const title = searchParams.get("title");
 
   useEffect(() => {
     if (title) {
@@ -28,13 +25,6 @@ export const SearchPage = () => {
       {error && <div>{error}</div>}
       <CardList movies={search} link={ROUTE.DETAILS_TRENDS} />
       {search.length > 9 && <ShowMore onClick={handlePage} />}
-      {/* <div>
-        {filter && (
-          <div>
-            <input type="text" />
-          </div>
-        )}
-      </div> */}
     </Content>
   );
 };

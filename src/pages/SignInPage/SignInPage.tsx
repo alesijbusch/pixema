@@ -1,13 +1,13 @@
 import { Button, Input, Title } from "componets";
 import { FormLink, FormLinkText, FormText, StyledSing } from "pages/SignUpPage/styles";
-import React from "react";
+
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { ROUTE } from "routes";
 import { fetchSignInUser, useAppDispatch } from "store";
 import { AuthValue } from "types";
-import { Content } from "ui";
+
 import { Form, FormInner, InputGroup, Label } from "ui/base";
 
 export const SignInPage = () => {

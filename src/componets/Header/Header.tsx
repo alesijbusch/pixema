@@ -40,7 +40,8 @@ export const Header = () => {
   };
   useEffect(() => {
     debaunceSearch && navigate(generatePath(ROUTE.SEARCH, { title: debaunceSearch }));
-  }, [debaunceSearch, navigate]);
+    //eslint-disable-next-line
+  }, [debaunceSearch]);
 
   const handleLogout = () => {
     dispatch(fetchLogout());

@@ -40,7 +40,6 @@ const searchSlice = createSlice({
     builder.addCase(fetchSearch.pending, (state) => {
       state.isLoading = true;
       state.error = null;
-      state.search = [];
     });
     builder.addCase(fetchSearch.fulfilled, (state, { payload }) => {
       state.isLoading = false;
@@ -51,7 +50,6 @@ const searchSlice = createSlice({
       if (payload) {
         state.isLoading = false;
         state.error = payload;
-        state.search = [];
       }
     });
   },
