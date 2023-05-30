@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { spaces, tokens, typography } from "ui";
+import { tokens, typography } from "ui";
 import { FilterIcon, ProfileArrowIcon } from "assets";
 import { Link } from "react-router-dom";
 import { Color } from "ui";
@@ -11,7 +11,20 @@ const StyledHeader = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  ${spaces.mb56}
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding-top: 32px;
+  padding-bottom: 40px;
+  ${layout.media.tablet} {
+    padding-bottom: 48px;
+  }
+  ${layout.media.largeDesktop} {
+    padding-bottom: 56px;
+    padding-top: 40px;
+  }
+  ${color.themeBackground.primaryBg};
+
   :last-child {
     margin-bottom: 0;
   }

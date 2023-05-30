@@ -15,7 +15,7 @@ export const SearchPage = () => {
 
   useEffect(() => {
     if (title) {
-      dispatch(fetchSearch(title));
+      dispatch(fetchSearch({ title, page }));
     }
   }, [dispatch, title, page]);
 

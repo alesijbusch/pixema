@@ -11,10 +11,10 @@ export const HomePage = () => {
   const [page, setPage] = useState<number>(1);
   const handlePage = () => setPage((prevPage) => ++prevPage);
   const moviesWords = ["Pirates of the Caribbean", "banana", "fast", "avengers", "apple", "car"];
-  const randomMovieWord = moviesWords[Math.floor(Math.random() * moviesWords.length)];
+  const title = moviesWords[Math.floor(Math.random() * moviesWords.length)];
 
   useEffect(() => {
-    dispatch(fetchMovies(randomMovieWord));
+    dispatch(fetchMovies({ title, page }));
   }, [dispatch, page]);
 
   return (

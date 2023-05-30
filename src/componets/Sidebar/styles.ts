@@ -15,6 +15,10 @@ const StyledSidebar = styled.div`
 const Copy = styled.div`
   ${color.text.light};
   ${typography.B1}
+  ${layout.media.desktop} {
+    position: sticky;
+    bottom: 64px;
+  }
 `;
 
 export { StyledSidebar, Copy };

@@ -3,7 +3,12 @@ import styled from "styled-components";
 import { Color, tokens, typography } from "ui";
 const { color, layout } = tokens;
 
-const StyledNavigation = styled.nav``;
+const StyledNavigation = styled.nav`
+  ${layout.media.desktop} {
+    position: sticky;
+    top: 156px;
+  }
+`;
 
 const NavigationLink = styled(Link)`
   display: flex;

@@ -8,15 +8,18 @@ interface searchState {
   isLoading: boolean;
   error: string | null;
 }
-
+export interface searchParams {
+  title: string;
+  page: number;
+}
 const movieKey = "73417f5e";
 
-export const fetchSearch = createAsyncThunk<MovieResponse, string, { rejectValue: string }>(
+export const fetchSearch = createAsyncThunk<MovieResponse, searchParams, { rejectValue: string }>(
   "search/fetchSearch",
-  async (options, { rejectWithValue }) => {
+  async ({ title, page }, { rejectWithValue }) => {
     try {
       const { data } = await axios.get<MovieResponseApi>(
-        `https://www.omdbapi.com/?apikey=${movieKey}&s=${options}`,
+        `https://www.omdbapi.com/?apikey=${movieKey}&s=${title}&page=${page}`,
       );
       return transformMovieApi(data);
     } catch (error) {
@@ -50,6 +53,7 @@ const searchSlice = createSlice({
       if (payload) {
         state.isLoading = false;
         state.error = payload;
+        state.search = [];
       }
     });
   },

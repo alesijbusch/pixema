@@ -8,15 +8,18 @@ interface moviesState {
   isLoading: boolean;
   error: string | null;
 }
-
+export interface moviesParams {
+  title: string;
+  page: number;
+}
 const movieKey = "73417f5e";
 
-export const fetchMovies = createAsyncThunk<MovieResponse, string, { rejectValue: string }>(
+export const fetchMovies = createAsyncThunk<MovieResponse, moviesParams, { rejectValue: string }>(
   "movies/fetchMovies",
-  async (title, { rejectWithValue }) => {
+  async ({ title, page }, { rejectWithValue }) => {
     try {
       const { data } = await axios.get<MovieResponseApi>(
-        `https://www.omdbapi.com/?apikey=${movieKey}&s=${title}`,
+        `https://www.omdbapi.com/?apikey=${movieKey}&s=${title}&page=${page}`,
       );
 
       return transformMovieApi(data);

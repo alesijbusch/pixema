@@ -78,10 +78,10 @@ const userSlice = createSlice({
       state.name = payload.name;
       state.email = payload.email;
       state.isAuth = true;
-      toast.success("вы успешно зарегистрировались");
+      toast.success("You have successfully registered");
     });
     builder.addCase(fetchSignUpUser.rejected, (state, { payload }) => {
-      toast.error("проверьте введенные данные");
+      toast.error("Check the entered data");
     });
     builder.addCase(fetchSignInUser.pending, (state) => {
       state.loading = true;
@@ -92,12 +92,12 @@ const userSlice = createSlice({
       state.name = payload.name;
       state.email = payload.email;
       state.isAuth = true;
-      toast.success("вы успешно вошли");
+      toast.success("You have successfully logged in");
     });
     builder.addCase(fetchSignInUser.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message;
-      toast.error("проверьте введенные данные");
+      toast.error("Check the entered data");
     });
     builder.addCase(fetchLogout.pending, (state) => {
       state.loading = true;
@@ -108,7 +108,7 @@ const userSlice = createSlice({
       state.email = null;
       state.name = null;
       state.loading = false;
-      toast.success("вы успешно вышли");
+      toast.success("You successfully logged out");
     });
     builder.addCase(fetchLogout.rejected, (state, action) => {
       state.loading = false;

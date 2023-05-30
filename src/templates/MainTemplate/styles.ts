@@ -3,13 +3,13 @@ import { tokens } from "ui";
 const { layout } = tokens;
 
 const Wrapper = styled.div`
-  margin: 32px 24px 48px;
+  margin: 0 24px 48px;
   ${layout.media.smallTablet} {
-    margin: 32px auto 48px;
+    margin: 0 auto 48px;
     width: 528px;
   }
   ${layout.media.tablet} {
-    margin: 40px auto 56px;
+    margin: 0 auto 56px;
     width: 688px;
   }
   ${layout.media.largeTablet} {
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
     width: 1184px;
   }
   ${layout.media.largeDesktop} {
-    margin: 40px auto 64px;
+    margin: 0 auto 64px;
     width: 1796px;
   }
 `;
