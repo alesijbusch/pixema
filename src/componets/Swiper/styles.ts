@@ -2,7 +2,7 @@ import { ArrowNextIcon, ArrowPrevIcon } from "assets";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { spaces, tokens, typography } from "ui";
+import { tokens } from "ui";
 
 const { color, layout } = tokens;
 

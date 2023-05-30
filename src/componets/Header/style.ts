@@ -14,7 +14,7 @@ const StyledHeader = styled.div`
   position: sticky;
   top: 0;
   z-index: 2;
-  padding-top: 32px;
+  padding-top: 40px;
   padding-bottom: 40px;
   ${layout.media.tablet} {
     padding-bottom: 48px;
@@ -32,9 +32,6 @@ const StyledHeader = styled.div`
     flex-wrap: nowrap;
   }
 `;
-// const StyledLink = styled(Link)`
-//   margin: 5px;
-// `;
 
 const Hamburger = styled.div`
   padding: 21px 20px;
@@ -64,8 +61,6 @@ const HamburgerLine = styled.div`
 `;
 const InputWrapper = styled.div`
   position: relative;
-  /* display: flex;
-  justify-content: space-between; */
   margin-top: 32px;
   width: 100%;
   transition: 0.3s all ease-in-out;
@@ -88,7 +83,6 @@ const IconFilter = styled(FilterIcon)`
   margin-bottom: -50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  //display: inline-block;
 `;
 const ProfileDropList = styled.ul`
   ${color.themeBackground.blockBg};

@@ -1,3 +1,4 @@
+import { StyledButton } from "componets/Button/styles";
 import styled from "styled-components";
 import { spaces, tokens } from "ui";
 
@@ -116,7 +117,9 @@ const SwitchName = styled.span`
 const SwitchText = styled.span`
   color: ${color.themeBackground.fill_bg};
 `;
-
+const AccountButton = styled(StyledButton)`
+  ${color.themeBackground.blockBg};
+`;
 export {
   AccountForm,
   AccountFormBlock,
@@ -131,4 +134,5 @@ export {
   SwitchInner,
   SwitchName,
   SwitchText,
+  AccountButton,
 };

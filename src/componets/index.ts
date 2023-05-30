@@ -9,7 +9,6 @@ import { Input } from "./Input/Input";
 import { Spinner } from "./Spinner/Spinner";
 import { Slider } from "./Swiper/Swiper";
 import { ShowMore } from "./ShowMore/ShowMore";
-import { Form } from "./Form/Form";
 import { Portal } from "./Portal/Portal";
 import { Modal } from "./Modal/Modal";
 import { Button } from "./Button/Button";
@@ -27,7 +26,6 @@ export {
   Spinner,
   Slider,
   ShowMore,
-  Form,
   Portal,
   Modal,
   Button,

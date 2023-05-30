@@ -15,6 +15,7 @@ import {
   SwitchName,
   SwitchText,
   SwitchInner,
+  AccountButton,
 } from "./styles";
 import { Button } from "componets/Button/Button";
 import { setThemeMode, useAppDispatch } from "store";
@@ -132,7 +133,7 @@ export const AccountPage = () => {
           </Switch>
         </SwitchContainer>
         <ButtonGroup>
-          <Button>Save</Button>
+          <AccountButton>Save</AccountButton>
           <Button>Cancel</Button>
         </ButtonGroup>
       </AccountForm>
