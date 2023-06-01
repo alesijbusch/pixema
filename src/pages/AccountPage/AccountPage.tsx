@@ -19,6 +19,7 @@ import {
 } from "./styles";
 import { Button } from "componets/Button/Button";
 import { setThemeMode, useAppDispatch } from "store";
+import { useToggle } from "hooks";
 
 interface Profile {
   name: string;
@@ -29,10 +30,12 @@ interface Profile {
 }
 
 export const AccountPage = () => {
+  const [isEditMode, toggleEditMode] = useToggle(true);
   const dispatch = useAppDispatch();
 
   const toggleTheme = () => {
     dispatch(setThemeMode());
+    toggleEditMode();
   };
   const {
     handleSubmit,
@@ -124,8 +127,8 @@ export const AccountPage = () => {
 
         <SwitchContainer>
           <SwitchInner>
-            <SwitchName>Dark</SwitchName>
-            <SwitchText>Use dark thema</SwitchText>
+            <SwitchName>{isEditMode ? "Dark" : "Light"}</SwitchName>
+            <SwitchText>{isEditMode ? "Use dark thema" : "Use light thema"}</SwitchText>
           </SwitchInner>
           <Switch className="switch">
             <SwitchInput type="checkbox" onClick={toggleTheme} />
