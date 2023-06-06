@@ -37,13 +37,17 @@ const StickersGroup = styled.div`
     grid-area: my-sticker;
   }
 `;
-const StickerReating = styled.div`
+
+const StickerReating = styled.div<{ reating: number }>`
   border-radius: 6px;
   padding: 2px 7px;
   margin-right: 20px;
   ${color.text.white};
+
   ${color.background.green};
-  ${typography.S3}
+  background-color: ${({ reating }) =>
+    reating >= 7 ? Color.green : reating <= 5 ? Color.orange : Color.yellow};
+  ${typography.S3};
 `;
 const StickerDefault = styled.div`
   border-radius: 6px;

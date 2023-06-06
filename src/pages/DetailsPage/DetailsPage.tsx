@@ -104,13 +104,12 @@ export const DetailsPage = () => {
       {error && <div>{error}</div>}
       {movieDetails && (
         <Details>
-          <DetailsGenre>
-            {movieDetails?.genre.split(",").join(", ")}
-            {/* <FontAwesomeIcon icon={faCircle} /> */}
-          </DetailsGenre>
+          <DetailsGenre>{movieDetails?.genre.split(",").join(", ")}</DetailsGenre>
           <DetailsTitle>{movieDetails.title}</DetailsTitle>
           <StickersGroup>
-            <StickerReating>{movieDetails.imdbRating}</StickerReating>
+            <StickerReating reating={+movieDetails.imdbRating}>
+              {movieDetails.imdbRating}
+            </StickerReating>
             <StickerDefault>
               <StyledImdbIcon /> {movieDetails.imdbRating}
             </StickerDefault>
