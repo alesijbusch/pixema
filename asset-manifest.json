@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/pixema/static/css/main.942fe894.css",
-    "main.js": "/pixema/static/js/main.40b5ca9e.js",
+    "main.js": "/pixema/static/js/main.eb345503.js",
     "static/media/auth.png": "/pixema/static/media/auth.8ea5228b96983ed87eaa.png",
     "static/media/empty-favorites.svg": "/pixema/static/media/empty-favorites.99f427301db1b60e816f9c569b709a34.svg",
+    "static/media/image-not-found.png": "/pixema/static/media/image-not-found.0ee629d08e998d7c4c0d.png",
     "static/media/empty-favorites.png": "/pixema/static/media/empty-favorites.0c44e028157e61b2e515.png",
     "static/media/pixema.svg": "/pixema/static/media/pixema.05aabdca70a1cd8c8fe47fc597e4d38f.svg",
     "static/media/imdb.svg": "/pixema/static/media/imdb.78a8c8c64d2bd689441f5a493a5b393c.svg",
@@ -20,10 +21,10 @@
     "static/media/burger-open.svg": "/pixema/static/media/burger-open.f93779c4af3663c0ac24796b4720a6ef.svg",
     "static/media/profile-arrow.svg": "/pixema/static/media/profile-arrow.6904455cac3b74428bbf45a0e219f1d2.svg",
     "main.942fe894.css.map": "/pixema/static/css/main.942fe894.css.map",
-    "main.40b5ca9e.js.map": "/pixema/static/js/main.40b5ca9e.js.map"
+    "main.eb345503.js.map": "/pixema/static/js/main.eb345503.js.map"
   },
   "entrypoints": [
     "static/css/main.942fe894.css",
-    "static/js/main.40b5ca9e.js"
+    "static/js/main.eb345503.js"
   ]
 }
