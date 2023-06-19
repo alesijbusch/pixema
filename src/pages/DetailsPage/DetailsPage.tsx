@@ -30,7 +30,7 @@ import {
   useAppSelector,
 } from "store";
 import { Slider, Spinner } from "componets";
-import { FavoritesIcon } from "assets";
+import { FavoritesIcon, NoPhotoImg } from "assets";
 
 import { Movie } from "types";
 import { transformMovieApi } from "mappers";
@@ -116,7 +116,13 @@ export const DetailsPage = () => {
             <StickerDefault>{movieDetails.runtime}</StickerDefault>
           </StickersGroup>
           <DetailsPosterGroup>
-            <DetailsPoster src={movieDetails.poster} />
+            <DetailsPoster
+              src={
+                movieDetails.poster === "N/A" || movieDetails.poster === ""
+                  ? `${NoPhotoImg}`
+                  : movieDetails.poster
+              }
+            />
             <StyledFavorites onClick={() => addFavoriteHandler(movieDetails)}>
               <FavoritesIcon />
             </StyledFavorites>

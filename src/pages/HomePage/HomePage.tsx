@@ -10,7 +10,15 @@ export const HomePage = () => {
   const dispatch = useAppDispatch();
   const [page, setPage] = useState<number>(1);
   const handlePage = () => setPage((prevPage) => ++prevPage);
-  const moviesWords = ["Pirates of the Caribbean", "banana", "fast", "avengers", "apple", "car"];
+  const moviesWords = [
+    "Pirates of the Caribbean",
+    "banana",
+    "fast",
+    "avengers",
+    "apple",
+    "car",
+    "solider",
+  ];
   const title = moviesWords[Math.floor(Math.random() * moviesWords.length)];
 
   useEffect(() => {

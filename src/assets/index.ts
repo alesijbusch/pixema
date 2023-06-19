@@ -14,6 +14,7 @@ import ArrowPrevIcon from "./icons/arrow-prev.svg";
 import ArrowNextIcon from "./icons/arrow-next.svg";
 import AuthImg from "./images/auth.png";
 import EmptyFavoritesImg from "./images/empty-favorites.png";
+import NoPhotoImg from "./images/image-not-found.png";
 
 export {
   Logo,
@@ -32,4 +33,5 @@ export {
   AuthImg,
   EmptyFavoritesImg,
   EmptyFavoritesIcon,
+  NoPhotoImg,
 };

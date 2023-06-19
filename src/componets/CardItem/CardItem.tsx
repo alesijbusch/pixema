@@ -1,5 +1,6 @@
 import { Movie } from "types";
 import { Poster, StyledCardItem, Title } from "./styles";
+import { NoPhotoImg } from "assets";
 
 interface CardItemProps {
   film: Movie;
@@ -8,10 +9,8 @@ interface CardItemProps {
 export const CardItem = ({ film }: CardItemProps) => {
   return (
     <StyledCardItem>
-      <Poster src={film.poster} />
+      <Poster src={film.poster === "N/A" || film.poster === "" ? `${NoPhotoImg}` : film.poster} />
       <Title>{film.title}</Title>
-      {/* <Ganre>Adventure - Action - Fantasy</Ganre>
-      <Rating>7.6</Rating> */}
     </StyledCardItem>
   );
 };
